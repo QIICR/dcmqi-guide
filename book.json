@@ -1,0 +1,8 @@
+{ "plugins": ["anchorjs"],
+  "pluginsConfig": {
+    "anchorjs": {
+      "placement": "right",
+      "visible": "hover"
+    }
+  }
+}

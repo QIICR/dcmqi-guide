@@ -1,0 +1,23 @@
+# Summary
+
+* [Introduction](README.md)
+* [User guide](user_guide/opening.md)
+  * [Installation](user_guide/installation.md)
+    * [Docker](user_guide/docker.md)
+    * [Build from source](user_guide/build_dcmqi.md)
+    * [3D Slicer extension](user_guide/slicer_extension.md)
+  * [Command line tools usage](user_guide/cmd_tools.md)
+    * [Segmentations](docs/user_guide/seg.md)
+      * [itkimage2segimage](user_guide/itkimage2segimage.md)
+      * [segimage2itkimage](user_guide/segimage2itkimage.md)
+    * [Measurements](user_guide/sr.md)
+      * [tid1500writer](user_guide/tid1500writer.md)
+      * [tid1500reader](user_guide/tid1500reader.md)
+    * [Parametric maps](user_guide/dicom-parametric-map-support.md)
+      * [itkimage2paramap](user_guide/itkimage2paramap.md)
+      * [paramap2itkimage](user_guide/paramap2itkimage.md)
+* [Open source credits](user_guide/opensource.md)
+* [Learning resources](user_guide/resources.md)
+
+
+

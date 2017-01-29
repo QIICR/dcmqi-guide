@@ -1,0 +1,291 @@
+<html> <head>
+<link rel="stylesheet" href="reveal.css">
+<link rel="stylesheet" href="white.css">
+</head> <body>
+<div class="reveal"> <div class="slides">
+
+<!--
+Title Slide
+-->
+<section id='title'>
+
+ <h1><a href="https://github.com/qiicr/dcmqi">dcmqi</a>: A hands-on
+   introduction</h1>
+
+  <p><strong>Note:</strong></p>
+  <p>Use the arrow keys to navigate the slides.</p>
+  <p>Replicate what you see in the movies on your computer.</p>
+
+  <h3><em>Andrey Fedorov, PhD</em></h3>
+  <a href='http://isomics.com'>Isomics, Inc.</a>
+
+</section>
+
+<section id='Contents'>
+
+  <h1>Contents</h1>
+    <ul>
+      <li><a href='#/Prerequisites'>Prerequisites</a> </li>
+      <li><a href='#/SampleData'>Looking at Sample Data volumes</a> </li>
+      <li><a href='#/ThreeDView'>Working in 3D</a> </li>
+      <li><a href='#/Editor'>Interactive Segmentation</a> </li>
+      <li><a href='#/LabelStatistics'>Obtaining quantitative data</a> </li>
+      <li><a href='#/python'>Using python on pixel data</a></li>
+      <li><a href='#/DICOM'>Working with DICOM</a></li>
+      <li><a href='#/extensions'>Using the Extension Manager</a></li>
+  </ul>
+
+</section>
+
+
+<!--
+Prereqs
+-->
+<section id='Prerequisites'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lawaJUGEf5A?rel=0" frameborder="0" allowfullscreen></iframe>
+  <h1>Prerequisites</h1>
+    <ul>
+      <li>Get the software from
+        <a href='http://download.slicer.org'>http://download.slicer.org</a>
+      </li>
+      <li>The examples are made with 3D Slicer version 4.6.2 released in November of 2016</li>
+      <li> These examples should work on most Windows, MacOS, and Linux machines.</li>
+      <li> <em>Note that only 64 bit operating systems are supported</em></li>
+      <li> 
+      For the DICOM example <a href="https://drive.google.com/file/d/0Bygzw56l1ZC-UVJjU1I0MzZUMXc/view?usp=sharing">download the data here</a>
+      </li>
+    </ul>
+  <p/>
+  <p/>
+  <h3> Slicer is free and open source under a <a href='https://github.com/Slicer/Slicer/blob/master/License.txt'>BSD-style license</a>
+  <h3> <em>Slicer is not an FDA-approved medical devices and is intended for research only.</em></h3>
+</em></h3>
+
+<p>See <a href='https://www.slicer.org/wiki/Documentation/4.6/SlicerApplication/Installation'>the installation documentation</a> for more information.</p>
+
+</section>
+
+
+<!--
+Simple viewing and navigation
+-->
+<section id='SampleData'>
+
+  <section>
+    <img data-src="./gifs/SampleData.gif"/>
+    <p>Task: get sample data, explore slices, and change window/level</p>
+  </section>
+
+  <section>
+
+    <ul>
+      <li>
+      Drag the right mouse button up and down to zoom in slice and 3D views
+      </li>
+      <li>
+    Slicer comes with a set of example datasets that can 
+    get you 
+    started with various modules.  These datasets are in a
+    research file format called 
+    <a href='http://teem.sf.net/nrrd'>NRRD</a>, 
+    not DICOM.  It is widely used in the Slicer community to 
+    store volumes and label maps.
+      </li>
+      <li>
+More details at <a href='https://www.slicer.org/wiki/Documentation/4.6/SlicerApplication/MainApplicationGUI'>the GUI documentation</a>.
+      </li>
+  </ul>
+
+  </section>
+
+</section>
+
+<!--
+ThreeDView
+-->
+<section id='ThreeDView'>
+
+  <section>
+    <img data-src="./gifs/ThreeDView.gif"/>
+    <p>Task: use the volume rendering module</p>
+  </section>
+
+  <section>
+
+    <ul>
+      <li>
+More details at <a href='https://www.slicer.org/wiki/Documentation/4.6/Modules/VolumeRendering'>the Volume Rendering documentation</a>.
+      </li>
+  </ul>
+
+  </section>
+
+</section>
+
+<!--
+Using the Editor to segment a structure
+-->
+<section id='Editor'>
+
+  <section>
+    <img data-src="./gifs/Editor.gif"/>
+    <p>Task: Perform a simple interactive segmentation</p>
+  </section>
+
+  <section>
+
+    <ul>
+      <li>
+More details at <a href='https://www.slicer.org/wiki/Documentation/4.6/Modules/Editor'>the Editor documentation</a>.
+      </li>
+      <li>
+Slicer now includes a more powerful interactive system called the <a href='https://www.slicer.org/wiki/Documentation/Nightly/Modules/SegmentEditor'>the Segment Editor</a>.  To use this please get the Nightly build of Slicer.
+      </li>
+  </ul>
+
+  </section>
+
+</section>
+
+<!--
+Generating label statistics table and plot
+-->
+<section id='LabelStatistics'>
+
+  <section>
+    <img data-src="./gifs/LabelStatistics.gif"/>
+    <p>Task: Generate a plot of image statistics within segmented regions</p>
+  </section>
+
+  <section>
+
+    <ul>
+      <li>
+More details at <a href='https://www.slicer.org/wiki/Documentation/4.6/Modules/LabelStatistics'>the LabelStatistics documentation</a>.
+      </li>
+      <li>
+        If you use the new Segment Editor you can export the Segmentation to a Label Map and still calculate the Label Statistics.
+      </li>
+  </ul>
+
+  </section>
+
+</section>
+
+
+<!--
+Loading DICOM Data
+-->
+<section id="DICOM">
+
+  <section>
+    <img data-src="./gifs/DICOM.gif"/>
+    <p>Task: Import DICOM data, review context, look at metadata, load</p>
+  </section>
+
+  <section>
+
+    <ul>
+      <li>
+    Slicer includes an internal sqlite database to organize dicom files
+      </li>
+      <li>
+More details at <a href='https://www.slicer.org/wiki/Documentation/4.6/Modules/DICOM'>the DICOM documentation</a>.
+      </li>
+  </ul>
+
+  </section>
+
+</section>
+
+
+<!--
+Working with the Python console
+-->
+<section id="python">
+
+  <section>
+    <img data-src="./gifs/python.gif"/>
+    <p>Task: use python commands to access and modify image data</p>
+  </section>
+
+  <section>
+
+    <ul>
+      <li>
+        Image data can be manipulated as numpy arrays, and so can the points of a surface model and many other data objects.
+      </li>
+      <li>
+        Pretty much the full APIs of Slicer, Qt, VTK, and SimpleITK, are available through python.
+      </li>
+      <li>
+        Many custom extensions to Slicer can be implemented in pure python, no compiler needed!
+      </li>
+      <li>
+More details at <a href='https://www.slicer.org/wiki/Documentation/4.6/Developers/Python_scripting'>the python scripting section of the Slicer developer documentation.</a>.
+      </li>
+  </ul>
+
+  </section>
+
+</section>
+
+<!--
+Looking at the extension manager
+-->
+<section id="extensions">
+
+  <section>
+    <img data-src="./gifs/extensions.gif"/>
+    <p>Task: Look at some of the things in the Extension Catalog</p>
+  </section>
+
+  <section>
+
+    <ul>
+      <li>
+        It's like an App Store, but they are all free!
+      </li>
+      <li>
+        The Slicer project maintains a set of "factory machines" that checkout and build all the latest source code for extensions every night.  This way extension developers can create their code on development machines, and rely on the factory to create release mode binaries for all Slicer-supported platforms that are easy to access and install by end users.
+      </li>
+      <li>
+More details at <a href='https://www.slicer.org/wiki/Documentation/4.6/SlicerApplication/ExtensionsManager'>the Extensions Manager documentation.</a>.
+      </li>
+      <li>
+        Another useful tool is the <a href="https://www.slicer.org/wiki/Documentation/Labs/CustomSlicerGenerator">Custom Slicer Generator</a> that allows developers to create their own applications that bundle various extensions and remove any unwanted modules.
+      </li>
+      <li>
+        Slicer supports the concept of <a href="https://www.slicer.org/wiki/Documentation/Nightly/Developers/Slicelets">Slicelets</a> so that custom applications can build on the Slicer framework while looking nothing like Slicer the application.
+      </li>
+
+  </ul>
+
+  </section>
+
+</section>
+
+
+
+<section>
+
+  <h1>Summary</h1>
+    <ul>
+      <li>Slicer has many powerful interactive tools</li>
+      <li>Most everything can be scripted in python</li>
+      <li>You can completely customize the C++ code</li>
+      <li>Slicer has a BSD-style software license</li>
+      <li>More information at
+        <a href='http://slicer.org'>http://slicer.org</a>
+      </li>
+  </ul>
+
+</section>
+
+
+</div> </div>
+<script src="reveal.js"></script> <script>
+Reveal.initialize({
+  slideNumber: true,
+});
+</script> </body> </html>
