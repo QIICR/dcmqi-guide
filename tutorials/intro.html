@@ -1,6 +1,6 @@
 <html> <head>
 <link rel="stylesheet" href="reveal.css">
-<link rel="stylesheet" href="white.css">
+<link rel="stylesheet" href="night.css">
 </head> <body>
 <div class="reveal"> <div class="slides">
 
@@ -9,41 +9,37 @@ Title Slide
 -->
 <section id='title'>
 
- <h1><a href="https://github.com/qiicr/dcmqi">dcmqi</a>: A hands-on
-   introduction</h1>
+ <h3><a href="https://github.com/qiicr/dcmqi">dcmqi</a>: A hands-on
+   introduction</h3>
 
   <p><strong>Note:</strong></p>
-  <p>Use the arrow keys to navigate the slides.</p>
-  <p>Replicate what you see in the movies on your computer.</p>
+  <p>use the left and right arrow keys to navigate the slides topics</p>
+  <p>use the down and up arrow keys to drill down into the topic details</p>
 
-  <h3><em>Andrey Fedorov, PhD</em></h3>
-  <a href='http://isomics.com'>Isomics, Inc.</a>
+  <h4>andrey.fedorov@gmail.com</h4>
+  <h4><a href="http://qiicr.org">http://qiicr.org</a></h4>
 
 </section>
 
 <section id='Contents'>
 
-  <h1>Contents</h1>
+  <h4>Contents</h4>
     <ul>
-      <li><a href='#/Prerequisites'>Prerequisites</a> </li>
-      <li><a href='#/SampleData'>Looking at Sample Data volumes</a> </li>
-      <li><a href='#/ThreeDView'>Working in 3D</a> </li>
-      <li><a href='#/Editor'>Interactive Segmentation</a> </li>
-      <li><a href='#/LabelStatistics'>Obtaining quantitative data</a> </li>
-      <li><a href='#/python'>Using python on pixel data</a></li>
-      <li><a href='#/DICOM'>Working with DICOM</a></li>
-      <li><a href='#/extensions'>Using the Extension Manager</a></li>
+      <li><a href='#/intro'>Background</a> </li>
+      <li><a href='#/whatis'>dcmqi</a> </li>
+      <li><a href='#/segmentation'>Segmentation: A simple example</a> </li>
+      <li><a href='#/headneck'></a>Segmentation: A more involved example</li>
+      <li><a href='#/closing'></a>Next steps</li>
   </ul>
 
 </section>
 
 
 <!--
-Prereqs
+Motivation
 -->
-<section id='Prerequisites'>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lawaJUGEf5A?rel=0" frameborder="0" allowfullscreen></iframe>
-  <h1>Prerequisites</h1>
+<section id='intro'>
+  <h3>Background</h3>
     <ul>
       <li>Get the software from
         <a href='http://download.slicer.org'>http://download.slicer.org</a>
@@ -51,7 +47,7 @@ Prereqs
       <li>The examples are made with 3D Slicer version 4.6.2 released in November of 2016</li>
       <li> These examples should work on most Windows, MacOS, and Linux machines.</li>
       <li> <em>Note that only 64 bit operating systems are supported</em></li>
-      <li> 
+      <li>
       For the DICOM example <a href="https://drive.google.com/file/d/0Bygzw56l1ZC-UVJjU1I0MzZUMXc/view?usp=sharing">download the data here</a>
       </li>
     </ul>
@@ -83,12 +79,12 @@ Simple viewing and navigation
       Drag the right mouse button up and down to zoom in slice and 3D views
       </li>
       <li>
-    Slicer comes with a set of example datasets that can 
-    get you 
+    Slicer comes with a set of example datasets that can
+    get you
     started with various modules.  These datasets are in a
-    research file format called 
-    <a href='http://teem.sf.net/nrrd'>NRRD</a>, 
-    not DICOM.  It is widely used in the Slicer community to 
+    research file format called
+    <a href='http://teem.sf.net/nrrd'>NRRD</a>,
+    not DICOM.  It is widely used in the Slicer community to
     store volumes and label maps.
       </li>
       <li>
