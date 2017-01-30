@@ -7,7 +7,7 @@
     * [Build from source](user_guide/build_dcmqi.md)
     * [3D Slicer extension](user_guide/slicer_extension.md)
   * [Command line tools usage](user_guide/cmd_tools.md)
-    * [Segmentations](docs/user_guide/seg.md)
+    * [Segmentations](user_guide/seg.md)
       * [itkimage2segimage](user_guide/itkimage2segimage.md)
       * [segimage2itkimage](user_guide/segimage2itkimage.md)
     * [Measurements](user_guide/sr.md)
