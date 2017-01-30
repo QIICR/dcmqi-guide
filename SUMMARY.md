@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+  * [Quick Start](quick-start.md)
 * [User guide](user_guide/opening.md)
   * [Installation](user_guide/installation.md)
     * [Docker](user_guide/docker.md)
@@ -18,6 +19,4 @@
       * [paramap2itkimage](user_guide/paramap2itkimage.md)
 * [Open source credits](user_guide/opensource.md)
 * [Learning resources](user_guide/resources.md)
-
-
 
