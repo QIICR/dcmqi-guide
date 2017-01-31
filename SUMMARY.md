@@ -1,7 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-  * [Quick Start](quick-start.md)
+* [Quick Start](quick-start.md)
+* [Tutorials](tutorials.md)
 * [User guide](user_guide/opening.md)
   * [Installation](user_guide/installation.md)
     * [Docker](user_guide/docker.md)
