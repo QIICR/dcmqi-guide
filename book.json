@@ -1,4 +1,4 @@
-{ "plugins": ["anchorjs"],
+{ "plugins": ["anchorjs","-lunr", "-search", "search-plus"],
   "pluginsConfig": {
     "anchorjs": {
       "placement": "right",
