@@ -2,15 +2,20 @@
 
 This is user guide for the [dcmqi](https://github.com/qiicr/dcmqi) \(DICOM for Quantitative Imaging\) library.
 
-With dcmqi you can:
+With `dcmqi` you can:
 
-* Convert ad hoc image and analysis results into standardized DICOM to share in archives like [TCIA](http://www.cancerimagingarchive.net/).
-* Convert DICOM data into a commonly used research file formats like json and NIfTI.
+* Convert certain types of image and analysis results into standardized DICOM form. This can help you with
+ * sharing data in archives like [TCIA](http://www.cancerimagingarchive.net/)
+ * interoperating with PACS and commercial tools
+ * supporting data queries to both image data and analysis results
+ * standardizing data semantics
+ * making your data self-described and better prepared for new uses
+* Convert DICOM data into a commonly used research file formats like JSON and NIfTI.
 * Integrate DICOM concepts into your analysis workflows so that intermediate results are encoded in a standardized manner, making it easy to share your data.
 
 # Acknowledgments
 
-This work is supported in part the National Institutes of Health, National   Cancer Institute, Informatics Technology for Cancer Research \(ITCR\) program, grant Quantitative Image Informatics for Cancer Research \(QIICR\) \(U24 CA180918, PIs Kikinis and Fedorov\).
+This work is supported in part the National Institutes of Health, National   Cancer Institute, Informatics Technology for Cancer Research \(ITCR\) program, grant [Quantitative Image Informatics for Cancer Research \(QIICR\)](http://qiicr.org) \(U24 CA180918, PIs Kikinis and Fedorov\).
 
 # References
 
