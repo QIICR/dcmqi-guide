@@ -89,10 +89,10 @@ Run the `itkimage2paramap` converter
 
 ```
 $ docker run -v /Users/fedorov/docker_test:/tmp qiicr/dcmqi itkimage2paramap \ 
-   --inputFileName /tmp/pm-example-float.nrrd \
-   --metaDataFileName /tmp/pm-example-float.json \
-   --outputParaMapFileName /tmp/docker_output_paramap.dcm \
-   --dicomImageFileName /tmp/pm-example-slice.dcm
+   --inputImage /tmp/pm-example-float.nrrd \
+   --inputMetadata /tmp/pm-example-float.json \
+   --outputDICOM /tmp/docker_output_paramap.dcm \
+   --inputDICOM /tmp/pm-example-slice.dcm
    
 Input image size: [256, 256, 20]
 Directions: 0.999981 -0.00540165 -0.00298377

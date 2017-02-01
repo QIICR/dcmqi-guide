@@ -10,7 +10,7 @@ Example command line:
 
 ```
 itkimage2segimage --inputImageList brain-label.nrrd \
-  --inputDICOMList brain1.dcm,brain2.dcm,brain3.dcm \
+  --inputDICOMDirectory Brain-DICOMs \
   --outputDICOM brain.SEG.dcm \
   --inputMetadata brain-label-mapping.json
 ```
