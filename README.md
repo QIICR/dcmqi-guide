@@ -4,7 +4,7 @@ This is user guide for the [dcmqi](https://github.com/qiicr/dcmqi) \(DICOM for Q
 
 With `dcmqi` you can:
 
-* Convert certain types of image and analysis results into standardized DICOM form. This can help you with
+* Convert certain types of [quantitative image analysis](http://journals.sagepub.com/doi/pdf/10.1177/0962280214537333) results into standardized DICOM form. This can help you with
  * sharing data in archives like [TCIA](http://www.cancerimagingarchive.net/)
  * interoperating with PACS and commercial tools
  * supporting data queries to both image data and analysis results
