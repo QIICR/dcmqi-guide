@@ -29,7 +29,7 @@ Title Slide
       <li><a href='#/setup'>Setup</a> </li>
       <li><a href='#/segmentation'>Segmentation conversion</a> </li>
       <li><a href='#/visualization'>Segmentation visualization</a> </li>
-      <li><a href='#/summary'>Summary</a></li>
+      <li><a href='#/summary'>Want to know more?</a></li>
   </ul>
 
 </section>
@@ -75,12 +75,41 @@ Simple viewing and navigation
     <h3>Setup</h3>
     <iframe width="900" height="500" src="https://www.youtube.com/embed/FvMNFlpergY?rel=0" frameborder="0" allowfullscreen></iframe>
   </section>
+
+  <section>
+    <h3>What you will need to repeat the steps in the video</h3>
+      <ul>
+        <li><a href="https://www.docker.com/products/overview">Docker</a></li>
+        <li><a href="http://download.slicer.org">3D Slicer</a></li>
+        <li><a href="http://atom.io">Atom</a></li>
+        <li>If you are using Windows, you will need a suitable terminal window, we will add those instructions in the future</a>
+      <ul>
+  </section>
+
+  <section>
+    <h3>What we tested</h3>
+      <ul>
+        <li>Tutorial was recorded on a Mac OS X 10.10.5 Yosemite</li>
+        <li>We also tested Docker and 3D Slicer operation on Windows 10 Pro</li>
+        <li>Configuration of the Atom editor to enable dicom-dump on Linux and Windows is different, we will add those instructions in the future</li>
+      <ul>
+  </section>
+
 </section>
 
 <section id='segmentation'>
   <section>
     <h3>First conversion task</h3>
     <iframe width="900" height="500" src="https://www.youtube.com/embed/NlmpVER3Vj8?rel=0" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section>
+    <h3>What you will need to repeat the steps in the video</h3>
+      <ul>
+        <li><a href="http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3">itk-SNAP</a></li>
+        <li><a href="http://slicer.kitware.com/midas3/download/item/273073/TCIA-RIDER-1023805636.zip">Brain MRI dataset we used</a> (you can get find this and a lot more publicly accessible data in <a href="http://www.cancerimagingarchive.net/">The Cancer Imaging Archive(TCIA)</a>)</li>
+        <li><a href="http://qiicr.org/dcmqi/#/seg">Web application</a> to populate segmentation metadatas JSON</li>
+      </ul>
   </section>
 </section>
 
@@ -89,17 +118,29 @@ Simple viewing and navigation
     <h3>Visualizing the result</h3>
     <iframe width="900" height="500" src="https://www.youtube.com/embed/2rfies_1Z0Q?rel=0" frameborder="0" allowfullscreen></iframe>
   </section>
+
+  <section>
+    <h3>What you will need to repeat the steps in the video</h3>
+      <ul>
+        <li><a href="http://www.cancerimagingarchive.net/">TCIA</a> collection <a href="http://slicer.kitware.com/midas3/download/folder/3854/QIN-HEADNECK-01-0139.zip">TCIA-HEADNECK subject 139</a> (don't forget to unzip the top-level package and all the compressed files underneath!)</li>
+        <li>You can also download this dataset using <i>TCIA Browser</i> module of 3D Slicer that we installed in the Part 1 of the tutorial</li>
+      </ul>
+  </section>
+
 </section>
 
 <section id='summary'>
 
-  <h3>Summary</h3>
+  <h3>Want to know more?</h3>
     <ul>
-      <li>More information at
-        <a href='https://github.com/qiicr/dcmqi'>https://github.com/qiicr/dcmqi</a>
-      </li>
-      <li>...</li>
-  </ul>
+      <li>Check out <a href='https://github.com/qiicr/dcmqi'>user guide</a> for detailed documentation of all of the dcmqi converters!</li>
+      <li>Give us your feedback, share your experience, get help:
+      <ul>
+        <li><a href="https://groups.google.com/forum/#!forum/dcmqi">dcmqi user group</a></li>
+        <li><a href="https://github.com/QIICR/dcmqi/issues">dcmqi issue reporting</a></li>
+      </ul></li>
+      <li>Let us know what we can do to improve dcmqi!</li>
+   </ul>
 
 </section>
 
