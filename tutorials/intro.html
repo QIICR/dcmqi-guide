@@ -41,7 +41,8 @@ Motivation
 <section id='intro'>
   <h3>Motivation</h3>
     <ul>
-      <li>DICOM is the format of images that we get from clinical equipment</li>
+      <li><a href="https://en.wikipedia.org/wiki/DICOM">DICOM</a> is the format of images that we get from clinical equipment</li>
+      <li><a href="http://journals.sagepub.com/doi/pdf/10.1177/0962280214537333">Quantitative imaging</a> is the extraction of quantifiable features from medical images</li>
       <li>Images are pixels + metadata in the DICOM-defined format</li>
       <li>Metadata is typically lost while converting from DICOM into research formats</li>
       <li>Metadata is most often missing in the results produced by the image analysis tools</li>
@@ -54,18 +55,33 @@ Motivation
 <!--
 Simple viewing and navigation
 -->
-<section id='whatis'>
+<section id='whatisdcmqi'>
 
   <section>
-    <h3>dcmqi</h3>
+    <h3>dcmqi = DICOM for Quantitative Imaging</h3>
       <ul>
-        <li>supports conversion of common derived image data types produced by quantitative image analysis</li>
+        <li>conversion of common derived image data types produced by quantitative image analysis</li>
           <ul>
             <li>segmentations, parametric maps, scalar measurements over segmented regions of interest</li>
           </ul>
         <li>command line converters</li>
         <li>C++ Application Programming Interface</li>
         <li>schemas for metadata</li>
+      </ul>
+  </section>
+</section>
+
+<!--
+Simple viewing and navigation
+-->
+<section>
+
+  <section>
+    <h3>This tutorial will teach you how to ...</h3>
+    <ul>
+      <li>set up your computer to use dcmqi</li>
+      <li>convert basic segmentation into DICOM</li>
+      <li>visualize DICOM images and segmentations</li>
       </ul>
   </section>
 </section>
