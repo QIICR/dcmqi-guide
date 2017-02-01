@@ -5,7 +5,6 @@
 ## Usage
 
 ```
-
    --skip
      Skip empty slices while encoding segmentation image. By default, empty
      slices will not be encoded, resulting in a smaller output file size.
@@ -17,6 +16,10 @@
      individual files can contain one or more labels (segments). Segments
      from different files are allowed to overlap. See documentation for
      details.
+     
+   --inputDICOMDirectory <std::string>
+     Directory with the DICOM files corresponding to the original image
+     that was segmented.
 
    --inputDICOMList <std::vector<std::string>>
      Comma-separated list of DICOM images that correspond to the original
