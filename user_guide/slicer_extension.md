@@ -4,7 +4,7 @@ You can access the functionality provided by `dcmqi` in 3D Slicer using `Quantit
 
 `dcmqi` itself is also available as a 3D Slicer extension. It provides the libraries and converters that can be integrated with other 3D Slicer extensions. If you are developing an extension for 3D Slicer, you can access `dcmqi` converters by specifying dependency on `dcmqi` 3D Slicer extension.
 
-[`QuantitativeReporting`](http://slicer.org) should be available as an extension in the nightly version of [3D Slicer](http://slicer.org), starting November 2016. We always suggest that you use the latest (nightly) version of the software when you try it for the first time.
+[`QuantitativeReporting`](https://github.com/QIICR/QuantitativeReporting) should be available as an extension in the nightly version of [3D Slicer](http://slicer.org), starting November 2016. We always suggest that you use the latest (nightly) version of the software when you try it for the first time.
 
 Download the latest **nightly release** for your platform from http://download.slicer.org. 
 
