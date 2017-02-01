@@ -7,7 +7,7 @@ application is defined by _images_ that contain all of the components and steps 
 
 ## Usage
 
-You will first need to install Docker on your system following [these instructions](https://www.docker.com/products/overview). Docker is available for Mac, Windows and Lunux.
+You will first need to install Docker on your system following [these instructions](https://www.docker.com/products/overview). Docker is available for Mac, Windows and Linux.
 
 Once installed, pull the dcmqi image to your system to instantiate the dcmqi container:
 
@@ -34,6 +34,8 @@ You can now run any of the command line converter provided by dcmqi by passing t
 $ docker run qiicr/dcmqi itkimage2segimage --help
 ```
 
+### Shared directory between Docker container and host
+
 Docker containers cannot directly access the filesystem of the host. In order to pass files as arguments to the dcmqi converter and to access files that converters create, an extra step is required to specify which directories will be used for file exchange using the `-v` argument:
 
 ```
@@ -42,7 +44,20 @@ Docker containers cannot directly access the filesystem of the host. In order to
 
 The argument above will make the `HOST_DIR` path available within the container at `CONTAINER_DIR` location. The files that will be read or written by the converter run from the docker container should be referred to via the `CONTAINER_DIR` path.
 
-Dockerfile for qiicr/dcmqi is available in the main repository of dcmqi [here](https://github.com/QIICR/dcmqi/blob/master/Dockerfile). It does not rely on any proprietary or non-open-source components. 
+#### Docker for Windows
+Most likely you will experience the display of an error message similar to the one shown below. 
+```
+C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: C: drive is not shared. Please share it in Docker for Windows Settings.
+See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
+```
+
+Is this the case, you will need to make sure that the drive, where the `HOST_DIR` is located, is shared. In order to do so:
+1. right click onto the Docker task bar icon and choose "Settings" 
+2. choose "Shared Drives" from the left menu (a list of drives that are available to share will be displayed)
+3. select the drive for your `HOST_DIR` to be shared
+4. confirm with apply and continue with 
+
+The Dockerfile for qiicr/dcmqi is available in the main repository of dcmqi [here](https://github.com/QIICR/dcmqi/blob/master/Dockerfile). It does not rely on any proprietary or non-open-source components. 
 
 ## Example
 
