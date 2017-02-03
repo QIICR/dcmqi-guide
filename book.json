@@ -13,10 +13,7 @@
         },
         "versions": {
             "gitbookConfigURL": "https://raw.githubusercontent.com/QIICR/dcmqi-guide/master/book.json",
-            "options": [{
-                "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/",
-                "text": "latest"
-            },
+            "options": [
             {
                 "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/v/v1.0.0/",
                 "text": "Version 1.0.0"
