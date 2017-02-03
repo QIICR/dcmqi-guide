@@ -12,7 +12,15 @@
             "visible": "hover"
         },
         "versions": {
-            "type": "Tags"
+            "type": "Tags",
+            "options": [{
+                "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/",
+                "text": "latest"
+            },
+            {
+                "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/v/v1.0.0/",
+                "text": "Version 1.0.0"
+            }]
         }
     }
 }
