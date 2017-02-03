@@ -12,7 +12,7 @@
             "visible": "hover"
         },
         "versions": {
-            "type": "tags"
+            "type": "Tags"
         }
     }
 }
