@@ -1,8 +1,15 @@
-{ "plugins": ["anchorjs","-lunr", "-search", "search-plus"],
-  "pluginsConfig": {
-    "anchorjs": {
-      "placement": "right",
-      "visible": "hover"
+{
+    "plugins": [
+        "anchorjs",
+        "-lunr",
+        "-search",
+        "search-plus",
+        "versions"
+    ],
+    "pluginsConfig": {
+        "anchorjs": {
+            "placement": "right",
+            "visible": "hover"
+        }
     }
-  }
 }
