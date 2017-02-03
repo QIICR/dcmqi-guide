@@ -10,6 +10,9 @@
         "anchorjs": {
             "placement": "right",
             "visible": "hover"
+        },
+        "versions": {
+            "type": "tags"
         }
     }
 }
