@@ -16,7 +16,8 @@
             "options": [
             {
                 "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/",
-                "text": "latest"
+                "text": "latest",
+                "selected": true
             },
             {
                 "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/v/v1.0.0/",
