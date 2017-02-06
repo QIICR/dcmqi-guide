@@ -1,0 +1,330 @@
+0:00:04.740,0:00:12.209
+now that we have completed the task of
+
+0:00:09.629,0:00:14.669
+data conversion of course it's
+
+0:00:12.209,0:00:17.130
+interesting to see that related quick
+
+0:00:14.669,0:00:19.619
+process to do that we will use 3D Slicer
+
+0:00:17.130,0:00:24.570
+application that we installed in
+
+0:00:19.619,0:00:27.090
+the setup step of this tutorial so I'm
+
+0:00:24.570,0:00:31.230
+going to launch the 3D Slicer
+
+0:00:27.090,0:00:34.920
+application and i'm going to use the
+
+0:00:31.230,0:00:38.250
+dicom browser to import the data set
+
+0:00:34.920,0:00:40.409
+that we have just created so i'm going
+
+0:00:38.250,0:00:43.500
+to point it to this directory and this
+
+0:00:40.409,0:00:47.070
+will import both the source dicom images
+
+0:00:43.500,0:00:51.900
+and the segmentation represented as dicom
+
+0:00:47.070,0:00:54.269
+into my local dicom database so now
+
+0:00:51.900,0:00:57.449
+if you look at the list i have just one
+
+0:00:54.269,0:01:00.449
+patient this patient has one study and
+
+0:00:57.449,0:01:03.449
+the study consists of two series one is
+
+0:01:00.449,0:01:06.119
+the mr imaging series that we've been
+
+0:01:03.449,0:01:08.880
+segmenting earlier and another one is the
+
+0:01:06.119,0:01:10.799
+result of segmentation that we produced
+
+0:01:08.880,0:01:14.159
+so i'm going to select the segmentation
+
+0:01:10.799,0:01:15.780
+result and click load button so now you
+
+0:01:14.159,0:01:18.060
+can see this message which basically
+
+0:01:15.780,0:01:21.990
+tells you that your segmentation
+
+0:01:18.060,0:01:25.380
+was done on this MRI series
+
+0:01:21.990,0:01:26.999
+they want to load the image and of
+
+0:01:25.380,0:01:31.289
+course it makes sense because in this
+
+0:01:26.999,0:01:33.149
+doesn't help to look at segmentation
+
+0:01:31.289,0:01:36.749
+without the context so i'm going to
+
+0:01:33.149,0:01:41.280
+click proceed and now you can see that
+
+0:01:36.749,0:01:45.060
+both the segmentation and the image that
+
+0:01:41.280,0:01:45.929
+I was a segmenting are loaded into 3D
+
+0:01:45.060,0:01:47.759
+slicer
+
+0:01:45.929,0:01:50.549
+so now i can you follow the capabilities
+
+0:01:47.759,0:01:53.189
+of the slicer to work with this data and
+
+0:01:50.549,0:01:55.950
+as you can see the color is preserved
+
+0:01:53.189,0:02:01.889
+the spatial location is preserved and if
+
+0:01:55.950,0:02:04.829
+i go to the segment editor module and
+
+0:02:01.889,0:02:08.640
+mouse over this region i can see that
+
+0:02:04.829,0:02:10.830
+the information about what this
+
+0:02:08.640,0:02:12.209
+segmentation is is also preserve they
+
+0:02:10.830,0:02:14.970
+can see that it's an anatomical
+
+0:02:12.209,0:02:16.500
+structure and specifically brain
+
+0:02:14.970,0:02:19.920
+ventricle
+
+0:02:16.500,0:02:22.290
+next what I'm going to do is to load
+
+0:02:19.920,0:02:24.420
+another dataset which you can also
+
+0:02:22.290,0:02:27.540
+download if you follow the links in the
+
+0:02:24.420,0:02:34.470
+tutorial I downloaded this data set
+
+0:02:27.540,0:02:37.170
+from from the QIN collection you
+
+0:02:34.470,0:02:41.550
+can learn more about this data set if
+
+0:02:37.170,0:02:47.640
+you go to this page and if you follow
+
+0:02:41.550,0:02:51.090
+and read this paper so i'm going to
+
+0:02:47.640,0:02:54.870
+import this data set that is including
+
+0:02:51.090,0:02:57.630
+series of pet image acquisition it
+
+0:02:54.870,0:03:00.570
+includes segmentations of the primary
+
+0:02:57.630,0:03:01.440
+tumor and various on affected lymph
+
+0:03:00.570,0:03:04.440
+nodes
+
+0:03:01.440,0:03:08.310
+it also includes the measurements that
+
+0:03:04.440,0:03:10.500
+were done over the segment structures so
+
+0:03:08.310,0:03:13.290
+all of this is represented using dicom
+
+0:03:10.500,0:03:17.640
+and now is being imported into my local
+
+0:03:13.290,0:03:21.299
+database local.com database this takes a
+
+0:03:17.640,0:03:36.260
+bit longer because this is a large
+
+0:03:21.299,0:03:42.019
+larger series
+
+0:03:36.260,0:03:43.730
+ok so again i have this new patient i
+
+0:03:42.019,0:03:45.650
+have one study for this patient and you
+
+0:03:43.730,0:03:47.689
+can see that this study consists of a
+
+0:03:45.650,0:03:50.540
+pet series of consists a ct Series
+
+0:03:47.689,0:03:52.730
+something else structured report and
+
+0:03:50.540,0:03:55.159
+various segmentations so what I'm
+
+0:03:52.730,0:03:58.280
+going to do is select the structured
+
+0:03:55.159,0:04:00.230
+report and click the load button now
+
+0:03:58.280,0:04:02.090
+remember that as part of the setup
+
+0:04:00.230,0:04:04.069
+installed the quantitative reporting
+
+0:04:02.090,0:04:06.409
+extension and that's the extension of
+
+0:04:04.069,0:04:09.769
+3D Slicer that can make sense out of
+
+0:04:06.409,0:04:12.140
+this data and pull of the dependences
+
+0:04:09.769,0:04:14.870
+alongside with a structured report into
+
+0:04:12.140,0:04:16.639
+the main application now that this
+
+0:04:14.870,0:04:20.449
+process is completed you can see that
+
+0:04:16.639,0:04:23.990
+the pet series after applying the
+
+0:04:20.449,0:04:25.850
+standardized uptake very correction has
+
+0:04:23.990,0:04:27.590
+been loaded and you can see also the
+
+0:04:25.850,0:04:29.960
+overlay of the segmentations multiple
+
+0:04:27.590,0:04:30.949
+structures that were segmented for for
+
+0:04:29.960,0:04:32.810
+this patient
+
+0:04:30.949,0:04:37.460
+next I'm going to go to the quantitative
+
+0:04:32.810,0:04:43.099
+reporting extension select the loaded a
+
+0:04:37.460,0:04:46.039
+data set here and enable crosshair so
+
+0:04:43.099,0:04:47.840
+now what I can do is go over the
+
+0:04:46.039,0:04:49.280
+structures that were cemented this
+
+0:04:47.840,0:04:51.320
+particular patient I can automatically
+
+0:04:49.280,0:05:04.129
+scroll to the location of the structure
+
+0:04:51.320,0:05:08.149
+of course I can also see it in 3d
+
+0:05:04.129,0:05:10.069
+and you can also see that I have various
+
+0:05:08.149,0:05:12.349
+types of measurements calculated over
+
+0:05:10.069,0:05:14.719
+this segmentation so I know what is a
+
+0:05:12.349,0:05:19.339
+min signal over the region of interest
+
+0:05:14.719,0:05:22.279
+what is the distribution of the pixel
+
+0:05:19.339,0:05:27.379
+intensities and so forth all this data
+
+0:05:22.279,0:05:30.499
+measurements segmentations images were
+
+0:05:27.379,0:05:32.989
+loaded from dicom and all of them are
+
+0:05:30.499,0:05:35.569
+accompanied by the metadata which is
+
+0:05:32.989,0:05:38.449
+critical for meaningful analysis of this
+
+0:05:35.569,0:05:39.439
+data so for example for the segmentation
+
+0:05:38.449,0:05:42.529
+results
+
+0:05:39.439,0:05:46.279
+I know what structure is segmented by
+
+0:05:42.529,0:05:48.409
+using SNOMED terminology and for the
+
+0:05:46.279,0:05:55.719
+measurements I know what the quantities
+
+0:05:48.409,0:05:55.719
+and units assigned to these measurements
+

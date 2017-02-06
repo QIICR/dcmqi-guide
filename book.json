@@ -1,8 +1,28 @@
-{ "plugins": ["anchorjs","-lunr", "-search", "search-plus"],
-  "pluginsConfig": {
-    "anchorjs": {
-      "placement": "right",
-      "visible": "hover"
+{
+    "plugins": [
+        "anchorjs",
+        "-lunr",
+        "-search",
+        "search-plus",
+        "versions"
+    ],
+    "pluginsConfig": {
+        "anchorjs": {
+            "placement": "right",
+            "visible": "hover"
+        },
+        "versions": {
+            "gitbookConfigURL": "https://raw.githubusercontent.com/QIICR/dcmqi-guide/master/book.json",
+            "options": [
+            {
+                "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/",
+                "text": "latest",
+                "selected": true
+            },
+            {
+                "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/v/v1.0.0/",
+                "text": "Version 1.0.0"
+            }]
+        }
     }
-  }
 }

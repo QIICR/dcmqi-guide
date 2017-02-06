@@ -1,0 +1,351 @@
+0:00:00.000,0:00:04.859
+in this video we are going to go over
+
+0:00:02.700,0:00:09.929
+the task of segmenting the structure
+
+0:00:04.859,0:00:11.519
+using ITK snap segmentation tool and
+
+0:00:09.929,0:00:17.450
+converting the result into dicom
+
+0:00:11.519,0:00:21.670
+representation using dcmqi converters
+
+0:00:17.450,0:00:25.840
+in preparation to this
+
+0:00:21.670,0:00:29.050
+video recording I saved the dicom
+
+0:00:25.840,0:00:31.390
+dataset into a temporary directory and
+
+0:00:29.050,0:00:34.900
+installed ITK snap on my computer
+
+0:00:31.390,0:00:38.290
+i'm going to launch ITK snap and
+
+0:00:34.900,0:00:42.160
+load the image data which is a dicom
+
+0:00:38.290,0:00:44.680
+series and you will find a link to the
+
+0:00:42.160,0:00:47.620
+dicom series that I use here in the
+
+0:00:44.680,0:00:53.019
+supporting materials for this video so
+
+0:00:47.620,0:00:55.600
+as I can see it's an MRI series of
+
+0:00:53.019,0:00:58.239
+the brain and for this simple example
+
+0:00:55.600,0:01:00.070
+I'm going to segment ventricles just to
+
+0:00:58.239,0:01:02.049
+make it quick for the demonstration
+
+0:01:00.070,0:01:04.449
+purposes I'm not going to describe your
+
+0:01:02.049,0:01:07.840
+how segmentation is done using
+
+0:01:04.449,0:01:10.690
+ITK snap in detail but you can check
+
+0:01:07.840,0:01:12.400
+out the ITK snap homepage for the very
+
+0:01:10.690,0:01:15.430
+excellent tutorials that they provide
+
+0:01:12.400,0:01:17.950
+that should be able to help you with a
+
+0:01:15.430,0:01:19.960
+segmentation itself our tutorial is
+
+0:01:17.950,0:01:23.200
+focusing on the conversion task and I'm
+
+0:01:19.960,0:01:26.200
+going to just go over the steps to
+
+0:01:23.200,0:01:28.630
+create the final result so I created the
+
+0:01:26.200,0:01:32.020
+speed image I'm going to create this
+
+0:01:28.630,0:01:36.670
+label which i will call ventricles know
+
+0:01:32.020,0:01:39.429
+the color of this label next once
+
+0:01:36.670,0:01:44.649
+the speed image is ready I'm
+
+0:01:39.429,0:01:46.179
+going to I create initialization for the
+
+0:01:44.649,0:01:52.719
+segmentation process I'm going to place
+
+0:01:46.179,0:01:58.719
+some bubbles and I am going to launch
+
+0:01:52.719,0:02:03.939
+the segmentation as you see the
+
+0:01:58.719,0:02:08.319
+segmentation contour is evolving and very
+
+0:02:03.939,0:02:10.750
+quickly it covers the space inside the
+
+0:02:08.319,0:02:13.360
+ventricles looks good to me so I'm going
+
+0:02:10.750,0:02:15.460
+to stop you can see the result is overlay
+
+0:02:13.360,0:02:18.460
+here and as a three-dimensional
+
+0:02:15.460,0:02:20.860
+structure here so that's that's the data
+
+0:02:18.460,0:02:25.180
+said that I want to export into dicom
+
+0:02:20.860,0:02:29.110
+and in ITK snap i will use the
+
+0:02:25.180,0:02:32.140
+segmentation export into nrrd image
+
+0:02:29.110,0:02:33.880
+format it's a very popular format in the
+
+0:02:32.140,0:02:36.010
+image
+
+0:02:33.880,0:02:38.650
+processing field in clinical image
+
+0:02:36.010,0:02:42.580
+analysis and I'm going to save this
+
+0:02:38.650,0:02:45.040
+result as nrrd file into my temporary
+
+0:02:42.580,0:02:52.640
+directory side-by-side with my dicom
+
+0:02:45.040,0:02:56.150
+data
+
+0:02:52.640,0:02:58.100
+In our directory we have the folder with the
+
+0:02:56.150,0:03:00.709
+source dicom data and we have the
+
+0:02:58.100,0:03:04.580
+ventricles segmentation result saved as
+
+0:03:00.709,0:03:08.420
+nrrd file what we have to do next is to
+
+0:03:04.580,0:03:11.540
+create the metadata saved in json to
+
+0:03:08.420,0:03:15.260
+facilitate the task of conversion to
+
+0:03:11.540,0:03:17.900
+help with this task we created a web
+
+0:03:15.260,0:03:20.959
+application that allows you to populate
+
+0:03:17.900,0:03:23.120
+in a visual convenient manner different
+
+0:03:20.959,0:03:25.550
+attributes that are required by the
+
+0:03:23.120,0:03:29.420
+converter so for the content creator
+
+0:03:25.550,0:03:32.030
+name i'm going to put my name for the
+
+0:03:29.420,0:03:36.860
+series description which is a free text
+
+0:03:32.030,0:03:41.030
+field segmentation of ventricles for the
+
+0:03:36.860,0:03:44.570
+body part examined it's a brain here i'm
+
+0:03:41.030,0:03:48.260
+going to choose the list that defines
+
+0:03:44.570,0:03:51.769
+the terminology to be used and I will
+
+0:03:48.260,0:03:54.680
+need to populate this form for each of
+
+0:03:51.769,0:03:58.370
+the segments in our instance we have
+
+0:03:54.680,0:04:00.200
+only one segment I will put again
+
+0:03:58.370,0:04:04.760
+description of this segment it's
+
+0:04:00.200,0:04:08.180
+ventricles are segments algorithm name ITK
+
+0:04:04.760,0:04:10.340
+snap for the segmented category the
+
+0:04:08.180,0:04:13.160
+choice here is anatomical structure and
+
+0:04:10.340,0:04:17.120
+now here I can start typing and I
+
+0:04:13.160,0:04:19.880
+see that brain ventricle is good match i
+
+0:04:17.120,0:04:25.160
+will initialize the color to be the same
+
+0:04:19.880,0:04:26.960
+color that we used in ITK snap that also
+
+0:04:25.160,0:04:31.550
+can be communicated in the metadata file
+
+0:04:26.960,0:04:35.720
+and now one very important attribute
+
+0:04:31.550,0:04:39.020
+here is this label ID label ID is the
+
+0:04:35.720,0:04:41.840
+number that links the section of the
+
+0:04:39.020,0:04:46.220
+JSON file described in this segment with
+
+0:04:41.840,0:04:48.080
+the label saved in the nrrd file so if
+
+0:04:46.220,0:04:50.720
+i go back to ITK snap i can see that
+
+0:04:48.080,0:04:53.570
+the label that i was assigned in the
+
+0:04:50.720,0:04:56.600
+output segmentation image is five
+
+0:04:53.570,0:05:00.050
+this means i need to specify five are in
+
+0:04:56.600,0:05:02.960
+my metadata now i'm ready i generated
+
+0:05:00.050,0:05:04.080
+this JSON content i will download and
+
+0:05:02.960,0:05:07.470
+save it into this
+
+0:05:04.080,0:05:10.470
+same directory where my segmentation and
+
+0:05:07.470,0:05:16.530
+source dicom data is located so now we
+
+0:05:10.470,0:05:19.889
+should be all set to do the conversion I
+
+0:05:16.530,0:05:22.259
+pre-populated this command line but
+
+0:05:19.889,0:05:24.810
+let's take a moment to look what is here
+
+0:05:22.259,0:05:26.849
+the important argument to the
+
+0:05:24.810,0:05:29.610
+run command is this dash v command that
+
+0:05:26.849,0:05:32.460
+essentially points the
+
+0:05:29.610,0:05:34.770
+converter to the content of the
+
+0:05:32.460,0:05:36.780
+directory with the beta so that
+
+0:05:34.770,0:05:41.099
+directory where I have all my data will
+
+0:05:36.780,0:05:43.800
+be mapped to /tmp/dcmqi directory and
+
+0:05:41.099,0:05:47.639
+now I need to use the command line
+
+0:05:43.800,0:05:49.110
+arguments to specify the input dicom
+
+0:05:47.639,0:05:52.710
+directory that's where the source they
+
+0:05:49.110,0:05:56.520
+dicom files are located the path to the
+
+0:05:52.710,0:05:59.069
+input metadata in JSON format input
+
+0:05:56.520,0:06:02.370
+image list which is short just one file
+
+0:05:59.069,0:06:06.060
+with the ventricles segmentation and the
+
+0:06:02.370,0:06:09.000
+filename to store the result of
+
+0:06:06.060,0:06:12.060
+conversion in dicom I run the converter
+
+0:06:09.000,0:06:15.509
+and it's completed successfully and now
+
+0:06:12.060,0:06:22.370
+i can see the result of conversion they
+
+0:06:15.509,0:06:22.370
+can file saved in the same directory
+
