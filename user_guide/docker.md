@@ -12,7 +12,7 @@ You will first need to install Docker on your system following [these instructio
 If you use Docker on Windows, note the [system requirements](https://docs.docker.com/docker-for-windows/):
 * you will need to have Windows 10 Pro or above
 * you will need to enable Hyper-V package (Docker will prompt you)
-* you will need to enable virtualization (here is [one guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Virtualization/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html) that may help you do that, but it assumes you can access your BIOS settings)
+* you will need to enable virtualization; [read this](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization-must-be-enabled) to learn how to check if it is enabled, and if it is not - here is [one guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Virtualization/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html) that may help you do that, but it assumes you can access your BIOS settings
 
 Once Docker is installed, pull the `dcmqi` image to your system to instantiate the `dcmqi` container:
 
