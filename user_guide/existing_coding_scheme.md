@@ -16,19 +16,27 @@ While converting segmentations, you will need to define the following coded enti
 * AnatomicRegionSequence (when applicable)
 * AnatomicRegionModifierSequence (when applicable)
 
-This looks overwhelming indeed! That's why we developed [a web application](http://qiicr.org/dcmqi/#/seg) to help you interactively choose the codes for each of those items (you can also use this interactive application 
+This looks overwhelming indeed! That's why we developed [a web application](http://qiicr.org/dcmqi/#/seg) to help you interactively choose the codes for each of those items. If you want to know the details, read on!
 
 For each of these attributes, DICOM provides guidance on the selection of the suitable codes.
 
-* SegmentedPropertyCategoryCodeSequence code choices are defined in ...
+**SegmentedPropertyCategoryCodeSequence** codes are listed in context group  ID (CID) [CID 7150](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7150.html) (extensible, i.e., you are not forced to use only the codes from this selection)
 
-**TBD**
+**SegmentedPropertyTypeCodeSequence** codes are defined in [CID 7151](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7151.html), which points to the application-specific CIDs that you can follow for the lists of codes
 
-When describing anatomic entities, [Systematized Nomenclature of Medicine Clinical Terms (SNOMED® CT)](https://en.wikipedia.org/wiki/SNOMED_CT) coding scheme (DICOM CodingSchemeDesignator `SRT`) is the preferred controlled terminology. Most, if not all, of the codes used to define the entities above are from SNOMED CT. SNOMED CT maintains a systematically organized computer processable collection of medical terms providing codes, terms, synonyms and definitions used in clinical documentation and reporting. SNOMED CT maintains the hierarchy of relationships among the codes, which can be used for semantic reasoning on the data. As an example, see [hierarchy of the entities related to the Liver code in the SNOMED CT Browser](http://browser.ihtsdotools.org/?perspective=full&conceptId1=181268008&edition=en-edition&release=v20160731&server=http://browser.ihtsdotools.org/api/snomed&langRefset=900000000000509007).
+**SegmentedPropertyTypeModifierCodeSequence** is an optional attribute that augments segmented property type code. As an example, if SegmentedPropertyTypeModifier is "Kidney", SegmentedPropertyTypeModifier can be "Left" to specify laterality. More modifier codes are available in [part 16 of the standard](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/PS3.16.html), as an example see [CID 2 Anatomic Modifier](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_B.html#table_CID_2).
+
+**AnatomicRegionSequence** and its modifier do not always have to be specified. In some situations, information contained in SegmentedPropertyType is sufficient. E.g., if one is creating an atlas, where the properties are purely anatomical, and there is no more to say about them than the anatomy, then the anatomy goes in the Segmented Property Type Code Sequence. If one has different types of properties (e.g., necrosis, enhancing rim, gross tumor volume), but one wants to say something about the anatomy (e.g., where the tumor is at), then the property goes in Segmented Property Type Code Sequence and the anatomy goes in Anatomic Region Sequence. When you do want to specify AnatomicRegion, you can consult [CID 4 Anatomic Region](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_4.html) for the list of codes. Modifier for this code is specified as needed, following the same approach as discussed for SegmentedPropertyTypeModifierCodeSequence. 
+
+[The web application](http://qiicr.org/dcmqi/#/seg) we mentioned earlier provides an interactive interface to somewhat simplify the task of populating the codes discussed above.
+
+### SNOMED CT
+
+Most, if not all codes listed in the contexts referenced earlier are from SNOMED CT, and have DICOM CodingSchemeDesignator `SRT`. The reason for this is that [Systematized Nomenclature of Medicine Clinical Terms (SNOMED® CT)](https://en.wikipedia.org/wiki/SNOMED_CT) coding scheme is the preferred controlled terminology used by DICOM . Most, if not all, of the codes used to define the entities above are from SNOMED CT. SNOMED CT maintains a systematically organized computer processable collection of medical terms providing codes, terms, synonyms and definitions used in clinical documentation and reporting. SNOMED CT maintains the hierarchy of relationships among the codes, which can be used for semantic reasoning on the data. As an example, see [hierarchy of the entities related to the Liver code in the SNOMED CT Browser](http://browser.ihtsdotools.org/?perspective=full&conceptId1=181268008&edition=en-edition&release=v20160731&server=http://browser.ihtsdotools.org/api/snomed&langRefset=900000000000509007).
 
 ### SNOMED CT License exemption
 
-Note that SNOMED CT codes included in the DICOM standard are exempt from [SNOMED CT license](http://www.snomed.org/snomed-ct/get-snomed-ct). The details are discussed in [this blog post](http://dclunie.blogspot.com/2016/03/dicom-and-snomed-back-in-bed-together.html):
+Note that SNOMED CT codes included in the DICOM standard are exempt from [SNOMED CT license](http://www.snomed.org/snomed-ct/get-snomed-ct). The details are discussed in [this blog post](http://dclunie.blogspot.com/2016/03/dicom-and-snomed-back-in-bed-together.html). In short:
 
 > Users and commercial and open source DICOM developers can be reassured that they may continue to use the subset of SNOMED concepts in the DICOM standard in their products and software, globally and without a fee or individual license.
 
