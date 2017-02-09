@@ -2,9 +2,9 @@
 
 In DICOM, the process of choosing a code, and a coding scheme, depends on the context. In the following, we will discuss some of the guidelines that can be used to choose suitable codes for the tasks of segmentation, measurements and parametric map conversion supported by `dcmqi`.
 
-* [Segmentation](user_guide/existing_coding_scheme.md#segmentation)
-* [Measurements](user_guide/existing_coding_scheme.md#measurements)
-* [Parametric map](user_guide/existing_coding_scheme.md#parametric-map)
+* [Segmentation](#segmentation)
+* [Measurements](#measurements)
+* [Parametric map](#parametric-map)
 
 ## Segmentation
 
