@@ -11,7 +11,7 @@
   * [General principles](user_guide/general.md)
   * [Coding schemes](user_guide/coding_schemes.md)
    * [DICOM-defined coding schemes](user_guide/existing_coding_schemes.md)
-   * ["Private" coding schemes](user_guide/existing_coding_schemes.md)
+   * ["Private" coding schemes](user_guide/new_coding_schemes.md)
   * [Command line tools usage](user_guide/cmd_tools.md)
     * [Segmentations](user_guide/seg.md)
       * [itkimage2segimage](user_guide/itkimage2segimage.md)
