@@ -1,0 +1,3 @@
+
+
+In DICOM, the process of choosing a code, and a coding scheme, depends on the context. When describing anatomic entities, [Systematized Nomenclature of Medicine Clinical Terms (SNOMED® CT)](https://en.wikipedia.org/wiki/SNOMED_CT) coding scheme (DICOM CodingSchemeDesignator `SRT`) is the one example of a controlled terminology that maintains a systematically organized computer processable collection of medical terms providing codes, terms, synonyms and definitions used in clinical documentation and reporting. 
