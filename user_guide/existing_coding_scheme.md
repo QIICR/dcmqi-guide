@@ -42,4 +42,16 @@ Note that SNOMED CT codes included in the DICOM standard are exempt from [SNOMED
 
 ## Measurements
 
+**TBD - work in progress**
+
 ## Parametric map
+
+The following codes can be passed to describe the parametric map you are converting using [itkimage2paramap converter](https://qiicr.gitbooks.io/dcmqi-guide/content/user_guide/itkimage2paramap.html):
+
+* QuantityValueCode
+* MeasurementUnitsCode
+* MeasurementMethodCode
+* ModelFittingMethodCode
+* DerivationCode
+* AnatomicRegionSequence
+
