@@ -48,12 +48,20 @@ Note that SNOMED CT codes included in the DICOM standard are exempt from [SNOMED
 
 The following codes can be passed to describe the parametric map you are converting using [itkimage2paramap converter](https://qiicr.gitbooks.io/dcmqi-guide/content/user_guide/itkimage2paramap.html):
 
-* QuantityValueCode
-* MeasurementUnitsCode
-* MeasurementMethodCode
-* ModelFittingMethodCode
-* DerivationCode
-* AnatomicRegionSequence
+* QuantityValueCode: Quantity being measured at each pixel - select code from [TID 7180](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7180.html), or introduce a [private code](user_guide/new_coding_schemes.md).
+* MeasurementUnitsCode: Units of measurement. DICOM uses [Unified Code of Units of Measurement (UCUM)](http://unitsofmeasure.org/trac) code system (CodingSchemeDesignator `UCUM`) to describe units. Some of the commonly used unit codes are listed in [CID 7181](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7181.html), but as discussed in [Part 16 Section 7.2.2](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_7.2.2.html), any of the UCUM codes can be used in DICOM.
+* DerivationCode: select code from [CID 7203](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7203.html), or introduce a [private code](user_guide/new_coding_schemes.md).
+* AnatomicRegionSequence and Modifier (optional): follow the same guidelines as discussed for [Segmentation](#segmentation)
+anatomic codes selection.
+* MeasurementMethodCode (optional): code describing the model used for deriving the quantity.
+* ModelFittingMethodCode (optional): code describing the model fitting method.
+
+In the future we plan to provide specific recipes that describe the sets of codes suitable for specific use-cases (e.g., estimating Apparent Diffusion Coefficient (ADC) from Diffusion-Weighted MRI, or performing pharmacokinetic modeling of the Dynamic Contrast-Enhanced MRI). 
+
+Relevant development of the codes related to ADC calculation can be found in DICOM Correction Proposal (CP)[CP-1665](ftp://medical.nema.org/medical/dicom/cp/cp1665_lb_ADCmodelparameters.pdf). These codes are expected to become part of the standard in Spring 2017.
+
+For now, the best place to start is [this web application](http://qiicr.org/dcmqi/#/validators) (select `pm-schema` in the Validation schema selector) that you can use to choose an existing example and modify it to tailor to your use case.
+
 
 
 
