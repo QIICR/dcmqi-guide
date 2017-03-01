@@ -18,6 +18,20 @@ Note the [system requirements](https://docs.docker.com/docker-for-windows/):
 
 **IMPORTANT**: You will also need to share the drive you will be using to communicate data to and from Docker image in Docker Settings as shown in the screenshot below.
 
+Most likely you will experience the display of an error message similar to the one shown below. 
+```
+C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: \ 
+C: drive is not shared. Please share it in Docker for Windows Settings.
+See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
+```
+
+If you have this error, make sure that the drive, where the `HOST_DIR` is located, is shared:
+
+1. right click onto the Docker task bar icon and choose "Settings" 
+2. choose "Shared Drives" from the left menu (a list of drives that are available to share will be displayed)
+3. select the drive for your `HOST_DIR` to be shared
+4. confirm with apply and continue with 
+
 ![](/user_guide/assets/docker-windows.jpg)
 
 ### Once Docker is installed
@@ -58,21 +72,6 @@ Docker containers cannot directly access the filesystem of the host. In order to
 ```
 
 The argument above will make the `HOST_DIR` path available within the container at `CONTAINER_DIR` location. The files that will be read or written by the converter run from the docker container should be referred to via the `CONTAINER_DIR` path.
-
-#### Docker for Windows
-Most likely you will experience the display of an error message similar to the one shown below. 
-```
-C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: \ 
-C: drive is not shared. Please share it in Docker for Windows Settings.
-See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
-```
-
-If you have this error, make sure that the drive, where the `HOST_DIR` is located, is shared:
-
-1. right click onto the Docker task bar icon and choose "Settings" 
-2. choose "Shared Drives" from the left menu (a list of drives that are available to share will be displayed)
-3. select the drive for your `HOST_DIR` to be shared
-4. confirm with apply and continue with 
 
 ## Usage example
 
