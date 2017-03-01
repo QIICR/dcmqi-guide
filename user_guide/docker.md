@@ -30,7 +30,7 @@ If you have this error, make sure that the drive, where the `HOST_DIR` is locate
 1. right click onto the Docker task bar icon and choose "Settings" 
 2. choose "Shared Drives" from the left menu (a list of drives that are available to share will be displayed)
 3. select the drive for your `HOST_DIR` to be shared
-4. confirm with apply and continue with 
+4. confirm with Apply and continue
 
 ![](/user_guide/assets/docker-windows.jpg)
 
