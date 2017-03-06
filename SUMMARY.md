@@ -23,7 +23,7 @@
     * [Parametric maps](user_guide/dicom-parametric-map-support.md)
       * [itkimage2paramap](user_guide/itkimage2paramap.md)
       * [paramap2itkimage](user_guide/paramap2itkimage.md)
-* [Troubleshooting](troubleshooting.md)
+* [Troubleshooting](user_guide/troubleshooting.md)
 * [Limitations](limitations.md)
 * [Open source credits](user_guide/opensource.md)
 * [Learning resources](user_guide/resources.md)
