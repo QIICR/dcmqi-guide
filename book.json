@@ -27,6 +27,11 @@
         },
         "page-toc": {
             "position": "before-first"
+        },
+        "etoc": {
+            "mindepth": 2,
+            "maxdepth": 4,
+            "notoc": false
         }
     }
 }
