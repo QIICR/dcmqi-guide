@@ -1,14 +1,3 @@
-# 
- 
-
-
-
-
-
-# еуые 
-
-Еуые
-
 # Frequently Asked Questions (FAQ)
 
 ## Why?
