@@ -15,10 +15,26 @@ The goal of `dcmqi` is to help you use DICOM for storing the results of quantita
 
 Why would you want to use DICOM for your analysis results?
 
-You should use DICOM if you want to improve interoperability of your data, to enhance the ability to automatically find and use the data by the computational tools, as well as support reuse of your data by individuals [1].
+You should use DICOM if you want to improve interoperability of your data, to enhance the ability to automatically find and use the data by the computational tools, as well as support reuse of your data by individuals. These goals are widely recognized as important in the scientific community [[1]](http://dx.doi.org/10.1038/sdata.2016.18).
+
+To highlight some of the specific advantages of using DICOM for storing analysis data, below we annotate the FAIR (Findable, Accessible, Interoperable, Reusable) Guiding Principles [[1]](http://dx.doi.org/10.1038/sdata.2016.18) formalized by [FORCE11](https://www.force11.org/group/fairgroup/fairprinciples), as applied to quantitative image analysis and functionality provided by `dcmqi`.
+
+FAIR Guiding principle | Research formats | DICOM 
+-|-|-
+**To be Findable:**|||
+**F1.** (meta)data are assigned a globally unique and persistent identifier|usually not assigned|each object has a unique identifier|
+**F2.** data are described with rich metadata (defined by R1 below)|minimal metadata sufficient to solve specific task (e.g., image resolution and orientation)|metadata is stored in standardized attributes describing versatile aspects of the data (the subject being imaged, processing details, references to related objects, etc.)
+**F3.** metadata clearly and explicitly include the identifier of the data it describes | metadata describing the subject may be stored separately from the analysis result, and cross-linked by means of file name or similar mechanism, creating opportunity for inconsistencies and errors| metadata is stored in the same object as the processing result
+**F4.** (meta)data are registered or indexed in a searchable resource|problem-specific solutions|general-purpose search and indexing of DICOM data is supported by every Picture Archival and Communications System (PACS) using DICOM Query and Retrieve protocol, or using REST-based [DICOMWeb](https://dicomweb.hcintegrations.ca/) protocol
+**To be Accessible**|||
+**A1.** (meta)data are retrievable, by their identifier using a standardized communication protocol|problem-specific solutions|general-purpose retrieval of DICOM data is supported by every Picture Archival and Communications System (PACS) using DICOM Query and Retrieve protocol, or using REST-based [DICOMWeb](https://dicomweb.hcintegrations.ca/) protocol
+**A1.1.** the protocol is open, free, and universally implementable|no comparable protocols have been proposed and implemented in widely accessible solutions|yes
+**A1.2.** the protocol allows for an authentication and authorization procedure, where necessary|no comparable protocols have been proposed and implemented in widely accessible solutions|DICOMWeb can be integrated with existing authentication protocols defined by other standards
+**A2.** metadata is accessible, even when the data is no longer available|
 
 
-[1] 
+
+[1] Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific data 3:160018. DOI: [10.1038/sdata.2016.18](http://dx.doi.org/10.1038/sdata.2016.18).
 
 
 ## Isn't DICOM used only for clinical images? {#clinicalonly}
