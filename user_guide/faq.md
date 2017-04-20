@@ -81,7 +81,7 @@ Volumetric measurements|Both measurements and associated metadata should be desc
 
 ## How is `dcmqi` related to _your favorite tool or toolkit_?
 
-Below is the list of various tools that are used by medical imaging researchers, and description of how it relates to `dcmqi`:
+Below is the list of various tools that are used by medical imaging researchers, and description of how they relate to `dcmqi`:
 * [Insight Toolkit](https://itk.org) - does not provide tools for conversion of DICOM objects supported by `dcmqi`. `dcmqi` uses ITK as a lower-level component for reading and writing research formats, and for image data operations.
 * [DCMTK](http://dcmtk.org), [GDCM](https://sourceforge.net/projects/gdcm/) - provide attribute- and SR tree-level C++ API for interacting with DICOM data; provide general-purpose command line tools for converting DICOM objects into human-readable list of attribute; do not provide tools for generating DICOM objects from research formats. `dcmqi` is using DCMTK as the lower-level component to operate on DICOM data.
 * [PixelMed](http://www.pixelmed.com/dicomtoolkit.html) Toolkit - provides attribute- and module-level Java API for interacting with DICOM objects; does not provide conversion tools for generating DICOM Segmentation image objects, Parameric maps, or volumetric measurements reports from research formats
