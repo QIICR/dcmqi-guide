@@ -59,7 +59,7 @@ Some of the examples of _image-related_ information that can be stored using DIC
 
 `dcmqi` provides tools to convert into standardized representation for the types of image-derived data produced in quantitative imaging research.
 
-## How about DICOM Radiation Therapy Structure Sets (RT-STRUCT)? 
+## Do you support DICOM Radiation Therapy Structure Sets (RT-STRUCT)? 
 
 `dcmqi` does not support conversion to/from DICOM RT-STRUCT objects.
 
