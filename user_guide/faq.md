@@ -62,7 +62,9 @@ Some of the examples of _image-related_ information that can be stored using DIC
 
 DICOM RT-STRUCT is a type of DICOM object that found wide adoption in the radiation therapy community to store the planar contours of the anatomical structures prepared for the purposes of radiation dose planning. Due to the large installation base of radiation therapy planning tools and history of their usage, there are large amounts of image data annotated with DICOM RT-STRUCT contours.
 
-We do not support RT-STRUCT, since there are established dedicated tools and libraries for handling DICOM RT-STRUCT, with some of the most notable examples include [SlicerRT](http://slicerrt.github.io/) extension of [3D Slicer](http://slicer.org), [Plastimatch](http://plastimatch.org/), and [CERR](http://www.cerr.info/). In our view, there is no need for yet another implementation of RT-STRUCT conversion to and from research formats.
+We do not support RT-STRUCT, since there are established dedicated tools and libraries for handling DICOM RT-STRUCT, with some of the most notable examples include [SlicerRT](http://slicerrt.github.io/) extension of [3D Slicer](http://slicer.org), [Plastimatch](http://plastimatch.org/), and [CERR](http://www.cerr.info/). 
+
+In our view, there is no need for yet another implementation of RT-STRUCT conversion to and from research formats.
 
 ## What are the research formats that `dcmqi` can convert into DICOM? 
 
@@ -74,7 +76,11 @@ Segmentation image | All research volumetric image formats supported by the [Ins
 Parametric map image|All research volumetric image formats supported by the [Insight Toolkit (ITK)](https://itk.org/): [NRRD](http://teem.sourceforge.net/nrrd/format.html), [MetaImage](http://www.itk.org/Wiki/MetaIO/Documentation), [NIfTI](http://nifti.nimh.nih.gov/nifti-1/), [Analyze](http://www.grahamwideman.com/gw/brain/analyze/formatdoc.htm); extra metadata is communicated using [JSON](http://www.json.org/) and constrained by [JSON-Schema](http://json-schema.org/).
 Volumetric measurements|Both measurements and associated metadata should be described using [JSON](http://www.json.org/) and constrained by [JSON-Schema](http://json-schema.org/). We are are planning to add support for [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) as input format in the future.
 
-
-
 ## How is `dcmqi` related to _your favorite tool or toolkit_?
 
+Below is the list of various tools that are used by medical imaging researchers, and description of how it relates to `dcmqi`:
+* [Insight Toolkit](https://itk.org) - does not provide tools for conversion of DICOM objects supported by `dcmqi`. `dcmqi` uses ITK as a lower-level component for reading and writing research formats, and for image data operations.
+* [DCMTK](http://dcmtk.org), [GDCM](https://sourceforge.net/projects/gdcm/) - provide attribute- and SR tree-level C++ API for interacting with DICOM data; provide general-purpose command line tools for converting DICOM objects into human-readable list of attribute; do not provide tools for generating DICOM objects from research formats. `dcmqi` is using DCMTK as the lower-level component to operate on DICOM data.
+* [PixelMed](http://www.pixelmed.com/dicomtoolkit.html) Toolkit - provides attribute- and module-level Java API for interacting with DICOM objects; does not provide conversion tools for generating DICOM Segmentation image objects, Parameric maps, or volumetric measurements reports from research formats
+* [dicom3tools](http://www.dclunie.com/dicom3tools.html) - provides attribute-level C API for interacting with DICOM objects; does not provide conversion tools for generating DICOM Segmentation image objects, Parameric maps, or volumetric measurements reports from research formats
+* [pydicom](http://www.pydicom.org/) - provides attribute-level Python API for interacting with DICOM objects; does not provide conversion tools for generating DICOM Segmentation image objects, Parameric maps, or volumetric measurements reports from research formats
