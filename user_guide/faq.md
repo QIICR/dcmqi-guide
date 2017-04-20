@@ -17,7 +17,7 @@ Why would you want to use DICOM for your analysis results?
 
 You should use DICOM if you want to improve interoperability of your data, to enhance the ability to automatically find and use the data by the computational tools, as well as support reuse of your data by individuals. These goals are widely recognized as important in the scientific community [[1]](http://dx.doi.org/10.1038/sdata.2016.18).
 
-To highlight some of the specific advantages of using DICOM for storing analysis data, below we annotate the FAIR (Findable, Accessible, Interoperable, Reusable) Guiding Principles [[1]](http://dx.doi.org/10.1038/sdata.2016.18) formalized by [FORCE11](https://www.force11.org/group/fairgroup/fairprinciples), as applied to quantitative image analysis and functionality provided by `dcmqi`.
+To highlight some of the specific advantages of using DICOM for storing analysis data, below we annotate the FAIR (Findable, Accessible, Interoperable, Reusable) Guiding Principles [[1]](http://dx.doi.org/10.1038/sdata.2016.18) formalized by [FORCE11](https://www.force11.org/group/fairgroup/fairprinciples), as applied to quantitative image analysis and functionality provided by DICOM.
 
 FAIR Guiding principle | Research formats | DICOM 
 -|-|-
