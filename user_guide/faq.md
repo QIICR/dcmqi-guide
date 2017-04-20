@@ -1,3 +1,6 @@
+
+
+
 # Frequently Asked Questions (FAQ)
 
 * [What are the problems that `dcmqi` is intended to solve?](#problems)
