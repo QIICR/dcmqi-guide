@@ -4,8 +4,7 @@
         "-lunr",
         "-search",
         "search-plus",
-        "versions",
-        "page-toc"
+        "versions"
     ],
     "pluginsConfig": {
         "anchorjs": {
