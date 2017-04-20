@@ -66,5 +66,15 @@ We do not support RT-STRUCT, since there are established dedicated tools and lib
 
 ## What are the research formats that `dcmqi` can convert into DICOM? 
 
+The research formats we support are specific to the type of the object being converted, as summarized in the table below.
+
+Object type | Supported research formats
+-|-
+Segmentation image | All research volumetric image formats supported by the [Insight Toolkit (ITK)](https://itk.org/): [NRRD](http://teem.sourceforge.net/nrrd/format.html), [MetaImage](http://www.itk.org/Wiki/MetaIO/Documentation), [NIfTI](http://nifti.nimh.nih.gov/nifti-1/), [Analyze](http://www.grahamwideman.com/gw/brain/analyze/formatdoc.htm); extra metadata is communicated using [JSON](http://www.json.org/) and constrained by [JSON-Schema](http://json-schema.org/).
+Parametric map image|All research volumetric image formats supported by the [Insight Toolkit (ITK)](https://itk.org/): [NRRD](http://teem.sourceforge.net/nrrd/format.html), [MetaImage](http://www.itk.org/Wiki/MetaIO/Documentation), [NIfTI](http://nifti.nimh.nih.gov/nifti-1/), [Analyze](http://www.grahamwideman.com/gw/brain/analyze/formatdoc.htm); extra metadata is communicated using [JSON](http://www.json.org/) and constrained by [JSON-Schema](http://json-schema.org/).
+Volumetric measurements|Both measurements and associated metadata should be described using [JSON](http://www.json.org/) and constrained by [JSON-Schema](http://json-schema.org/). We are are planning to add support for [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) as input format in the future.
+
+
+
 ## How is `dcmqi` related to _your favorite tool or toolkit_?
 
