@@ -5,7 +5,9 @@
 
 
 
+# еуые 
 
+Еуые
 
 # Frequently Asked Questions (FAQ)
 
@@ -71,7 +73,9 @@ Some of the examples of _image-related_ information that can be stored using DIC
 
 DICOM RT-STRUCT is a type of DICOM object that found wide adoption in the radiation therapy community to store the planar contours of the anatomical structures prepared for the purposes of radiation dose planning. Due to the large installation base of radiation therapy planning tools and history of their usage, there are large amounts of image data annotated with DICOM RT-STRUCT contours.
 
-We do not support RT-STRUCT for the following reasons:
-1. There are established dedicated tools and libraries for handling DICOM RT-STRUCT, with some of the most notable examples include [SlicerRT](http://slicerrt.github.io/) extension of [3D Slicer](http://slicer.org), [Plastimatch](http://plastimatch.org/), and [CERR](http://www.cerr.info/).
+We do not support RT-STRUCT, since there are established dedicated tools and libraries for handling DICOM RT-STRUCT, with some of the most notable examples include [SlicerRT](http://slicerrt.github.io/) extension of [3D Slicer](http://slicer.org), [Plastimatch](http://plastimatch.org/), and [CERR](http://www.cerr.info/). In our view, there is no need for yet another implementation of RT-STRUCT conversion to and from research formats.
 
 ## What are the research formats that `dcmqi` can convert into DICOM? 
+
+## How is `dcmqi` related to _your favorite tool or toolkit_?
+
