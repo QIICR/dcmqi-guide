@@ -81,7 +81,7 @@ Segmentation image | All research volumetric image formats supported by the [Ins
 Parametric map image|All research volumetric image formats supported by the [Insight Toolkit (ITK)](https://itk.org/): [NRRD](http://teem.sourceforge.net/nrrd/format.html), [MetaImage](http://www.itk.org/Wiki/MetaIO/Documentation), [NIfTI](http://nifti.nimh.nih.gov/nifti-1/), [Analyze](http://www.grahamwideman.com/gw/brain/analyze/formatdoc.htm); extra metadata is communicated using [JSON](http://www.json.org/) and constrained by [JSON-Schema](http://json-schema.org/). | [DICOM Parametric map ](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.75.html)
 Volumetric measurements|Both measurements and associated metadata should be described using [JSON](http://www.json.org/) and constrained by [JSON-Schema](http://json-schema.org/). We are are planning to add support for [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) as input format in the future.|[DICOM TID1500 Structured Report](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500)
 
-## How is `dcmqi` related to _your favorite tool or toolkit_?
+## How is `dcmqi` related to ...?
 
 Below is the list of various tools that are used by medical imaging researchers, and description of how they relate to `dcmqi`:
 * [Insight Toolkit](https://itk.org) - does not provide tools for conversion of DICOM objects supported by `dcmqi`. `dcmqi` uses ITK as a lower-level component for reading and writing research formats, and for image data operations.
