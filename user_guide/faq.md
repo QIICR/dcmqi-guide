@@ -9,7 +9,7 @@
 
 # Frequently Asked Questions (FAQ)
 
-## Why? {#why}
+## Why?
 
 The goal of `dcmqi` is to help you use DICOM for storing the results of quantitative image analysis.
 
@@ -37,7 +37,7 @@ FAIR Guiding principle | Research formats | DICOM
 [1] Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific data 3:160018. DOI: [10.1038/sdata.2016.18](http://dx.doi.org/10.1038/sdata.2016.18).
 
 
-## Isn't DICOM used only for clinical images? {#clinicalonly}
+## Isn't DICOM used only for clinical images?
 
 **No.**
 
@@ -58,6 +58,6 @@ Some of the examples of _image-related_ information that can be stored using DIC
 
 `dcmqi` provides tools to convert into standardized representation for the types of image-derived data produced in quantitative imaging research.
 
-## How about DICOM Radiation Therapy Structure Sets (RT-STRUCT)? {#rtstruct}
+## How about DICOM Radiation Therapy Structure Sets (RT-STRUCT)? 
 
-## What are the research formats that `dcmqi` can convert into DICOM? {#formats}
+## What are the research formats that `dcmqi` can convert into DICOM? 
