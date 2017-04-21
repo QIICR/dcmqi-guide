@@ -92,3 +92,7 @@ Below is the list of various tools that are used by medical imaging researchers,
 * [3D Slicer](http://slicer.org) - provides interactive application to load and process DICOM data; includes `dcmqi` as an extension; uses `dcmqi` to perform conversion of the objects `dcmqi` supports.
 * [ePAD](https://epad.stanford.edu/) - provides interactive application to visualize and annotate DICOM data; by design, does not provide conversion tools; uses `dcmqi` to perform conversion of DICOM TID1500 SR objects supports; uses attribute-level API of [PixelMed](http://www.pixelmed.com/dicomtoolkit.html) to implement support of DICOM Segmentation objects and DICOM Parametric maps.
 * [CERR](http://www.cerr.info/) - a software platform for developing and sharing research results in radiation therapy treatment planning. Supports DICOM RT-STRUCT annotation format. Does not support DICOM Segmentation image, Parametric map, or volumetric measurements.
+
+## Can I use it for patient care?
+
+`dcmqi` is intended for research work and _has no FDA clearances or approvals of any kind_. It is the responsibility of the user to comply with all laws and regulations (and moral/ethical guidelines) when using `dcmqi`.
