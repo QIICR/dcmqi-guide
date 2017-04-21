@@ -44,7 +44,7 @@ FAIR Guiding principle | Research formats | DICOM
 
 **DICOM is _the_ international standard for biomedical images and image-related information.** 
 
-Widespread use of DICOM in clinic has led to a common mis-conception that DICOM is only suitable for storing clinical images. DICOM is applicable not only in clinical care, but also in clinical and pre-clinical research.
+Widespread use of DICOM in clinic has led to a common mis-conception that DICOM is only suitable for storing clinical images. DICOM applications are **not** restricted to clinical use only. The standard defines objects for storing image and image-related data, which are also suitable to support imaging research, including that done using [pre-clinical and animal imaging](ftp://medical.nema.org/medical/dicom/final/sup187_ft_preclinicalanimalacquisitioncontext.pdf).
 
 DICOM supports a wide range of biomedical applications, including preclinical, veterinary and small animal imaging. Preclinical small animal imaging was introduced to the standard in 2015, see [Supplement 187 Preclinical Small Animal Imaging Acquisition Context](ftp://medical.nema.org/medical/dicom/final/sup187_ft_preclinicalanimalacquisitioncontext.pdf).
 
