@@ -1,8 +1,3 @@
-# выаыва
-
-выаыва
-
-
 # Frequently Asked Questions \(FAQ\)
 
 ## Why?
