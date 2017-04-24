@@ -1,5 +1,3 @@
-# abc
-
 # Frequently Asked Questions \(FAQ\)
 
 ## Why?
