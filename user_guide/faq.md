@@ -10,9 +10,9 @@ You should use DICOM if you want to improve interoperability of your data, to en
 
 To highlight some of the specific advantages of using DICOM for storing analysis data, below we annotate the FAIR \(Findable, Accessible, Interoperable, Reusable\) Guiding Principles [\[1\]](http://dx.doi.org/10.1038/sdata.2016.18) formalized by [FORCE11](https://www.force11.org/group/fairgroup/fairprinciples), as applied to quantitative image analysis, describing how research formats help meet the FAIR requirements, and contrasting those with the functionality provided by DICOM.
 
-While speaking of "research formats", we refer primarily to the formats commonly used by researchers developing quantitative image analysis tools. Examples include [NRRD](http://teem.sourceforge.net/nrrd/format.html), [MetaImage](http://www.itk.org/Wiki/MetaIO/Documentation), [NIfTI](http://nifti.nimh.nih.gov/nifti-1/), [Analyze](http://www.grahamwideman.com/gw/brain/analyze/formatdoc.htm).
+While speaking of "research formats", we refer primarily to the formats commonly used by researchers developing quantitative image analysis tools. Examples include [NRRD](http://teem.sourceforge.net/nrrd/format.html), [MetaImage](http://www.itk.org/Wiki/MetaIO/Documentation), [NIfTI](http://nifti.nimh.nih.gov/nifti-1/), and [Analyze](http://www.grahamwideman.com/gw/brain/analyze/formatdoc.htm).
 
-Notable example of a domain-specific solution proposed for data storage include [Brain Imaging Data Structure (BIDS)](https://www.nature.com/articles/sdata201644) being developed for neuroimaging applications. We are not aware of a domain-specific solution developed for cancer imaging.
+Notable example of a domain-specific solution proposed for data storage is [Brain Imaging Data Structure (BIDS)](https://www.nature.com/articles/sdata201644) being developed for neuroimaging applications. We are not aware of a domain-specific solution developed for cancer imaging.
 
 | FAIR Guiding principle | Research formats | DICOM |
 | --- | --- | --- |
