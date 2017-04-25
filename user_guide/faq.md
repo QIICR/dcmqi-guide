@@ -12,6 +12,8 @@ To highlight some of the specific advantages of using DICOM for storing analysis
 
 While speaking of "research formats", we refer primarily to the formats commonly used by researchers developing quantitative image analysis tools. Examples include [NRRD](http://teem.sourceforge.net/nrrd/format.html), [MetaImage](http://www.itk.org/Wiki/MetaIO/Documentation), [NIfTI](http://nifti.nimh.nih.gov/nifti-1/), [Analyze](http://www.grahamwideman.com/gw/brain/analyze/formatdoc.htm).
 
+Notable example of a domain-specific solution proposed for data storage include [Brain Imaging Data Structure (BIDS)](https://www.nature.com/articles/sdata201644) being developed for neuroimaging applications. We are not aware of a domain-specific solution developed for cancer imaging.
+
 | FAIR Guiding principle | Research formats | DICOM |
 | --- | --- | --- |
 | **To be Findable:** |  |  |
