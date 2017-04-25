@@ -22,8 +22,6 @@ Updating the DCMTK \(DICOM Toolkit\) for DCMQI is a task that takes place quite 
    ```
 3. Create a PR \(pull request\) from your `dcmqi` branch to the dcmtk-dcmqi[^1] repository \(wait for DCMQI core developer to approve your PR.\)
 
-[^1] [https://github.com/QIICR/dcmtk-dcmqi](https://github.com/QIICR/dcmtk-dcmqi)
-
 ### After PR has been approved
 
 1. Go to AppVeyor[^2] and sign into your account via GitHub. 
@@ -31,8 +29,8 @@ Updating the DCMTK \(DICOM Toolkit\) for DCMQI is a task that takes place quite 
 3. Select `dcmtk` and click `NEW BUILD` on the next page
 4. After the build succeeded a new release should appear on dcmtk-dcmqi releases[^3]
 
-[^2] [https://ci.appveyor.com/login](https://ci.appveyor.com/login)
 
-  
+[^1] [https://github.com/QIICR/dcmtk-dcmqi](https://github.com/QIICR/dcmtk-dcmqi)
+[^2] [https://ci.appveyor.com/login](https://ci.appveyor.com/login)
 [^3] [https://github.com/QIICR/dcmtk-dcmqi/releases](https://github.com/QIICR/dcmtk-dcmqi/releases)
 
