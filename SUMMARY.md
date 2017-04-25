@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Quick Start](quick-start.md)
-* [Frequently Asked Questions (FAQ)](user_guide/faq.md)
+* [Frequently Asked Questions \(FAQ\)](user_guide/faq.md)
 * [Tutorials](tutorials.md)
 * [User guide](user_guide/opening.md)
   * [Installation](user_guide/installation.md)
@@ -24,8 +24,10 @@
     * [Parametric maps](user_guide/dicom-parametric-map-support.md)
       * [itkimage2paramap](user_guide/itkimage2paramap.md)
       * [paramap2itkimage](user_guide/paramap2itkimage.md)
+* [Developer guide](developer-guide.md)
+  * [Update DCMTK for DCMQI](developer-guide/update-dcmtk-for-dcmqi.md)
 * [Troubleshooting](user_guide/troubleshooting.md)
 * [Limitations](limitations.md)
 * [Open source credits](user_guide/opensource.md)
-* [Learning resources](user_guide/resources.md)
+* Developer guide
 
