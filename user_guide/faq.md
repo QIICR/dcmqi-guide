@@ -70,6 +70,10 @@ We do not support RT-STRUCT, since there are established dedicated tools and lib
 
 In our view, there is no need for yet another implementation of RT-STRUCT conversion to and from research formats.
 
+We also note that although reporting of measurements for an image region defined by RT-STRUCT is supported by DICOM TID1500 Structured report, we currently do not implement direct support for this in `dcmqi`. We may consider adding this functionality in the future.
+
+Users that have a need to report measurements over RT-STRUCT should first convert RT-STRUCT into a rasterized representation stored in an ITK-readable research format using any of the tools mentioned above, and then convert the result into DICOM Segmentation image using `dcmqi`. The measurements reported over the region defined by the Segmentation image can then be stored as a DICOM TID1500 Structured report.
+
 ## What are the formats that `dcmqi` supports?
 
 The research formats we support are specific to the type of the object being converted, as summarized in the table below.
