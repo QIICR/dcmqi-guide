@@ -66,6 +66,8 @@ Some of the examples of _image-related_ information that can be stored using DIC
 
 DICOM RT-STRUCT is a type of DICOM object that found wide adoption in the radiation therapy community to store the planar contours of the anatomical structures prepared for the purposes of radiation dose planning. Due to the large installation base of radiation therapy planning tools and history of their usage, there are large amounts of image data annotated with DICOM RT-STRUCT contours.
 
+Many of the segmentation algorithms produce classification of image voxels, and thus do not naturally suit the representation by means of planar contours, requiring extra conversion operation and a potential for information loss. DICOM Segmentation image encodes classification of individual image voxels directly, and is thus more natural fit for voxel-based segmentation results.
+
 We do not support RT-STRUCT, since there are established dedicated tools and libraries for handling DICOM RT-STRUCT, with some of the most notable examples include [SlicerRT](http://slicerrt.github.io/) extension of [3D Slicer](http://slicer.org), [Plastimatch](http://plastimatch.org/), and [CERR](http://www.cerr.info/).
 
 In our view, there is no need for yet another implementation of RT-STRUCT conversion to and from research formats.
