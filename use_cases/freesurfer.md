@@ -4,7 +4,7 @@
 
 Segmentations of
 * grey and white matter (labels 4 and 5 in [this NIfTI file](http://slicer.kitware.com/midas3/download/item/285812/gmwm-dcmspace.nii.gz))
-* left and right cerebral hemispheres (labels 4 and 5 in [this NIfTI file](http://slicer.kitware.com/midas3/download/item/285813/lhrh-dcmspace.nii.gz))
+* left and right cerebral hemispheres (labels 2 and 3 in [this NIfTI file](http://slicer.kitware.com/midas3/download/item/285813/lhrh-dcmspace.nii.gz))
 * overall brain mask (label 1 in [this NIfTI file](http://slicer.kitware.com/midas3/download/item/285811/brainmask-dcmspace.nii.gz))
 
 were produced by FreeSurfer by segmenting [this DICOM MR series](http://slicer.kitware.com/midas3/download/item/285806/CMET-MRhead.zip).
