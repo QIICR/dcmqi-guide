@@ -13,7 +13,7 @@ were produced by FreeSurfer by segmenting [this DICOM MR series](http://slicer.k
 
 ### Visualization of the input data
 
-As a first step, it is always a good idea to visualize the input data. We recommend (3D Slicer)[http://slicer.org] for visualizing both DICOM and research format data.
+As a first step, it is always a good idea to visualize the input data. We recommend [3D Slicer](http://slicer.org) for visualizing both DICOM and research format data.
 
 Import DICOM dataset into Slicer DICOM database by unzipping the downloaded file with the MR series, opening DICOM Browser, and importing the directory with the DICOM MR series files (choose "Add link" when prompted).
 
