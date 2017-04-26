@@ -50,7 +50,7 @@ In order to do the conversion, we need to pass extra metadata that would describ
 
 We can use the web application that accompanies `dcmqi` to populate the metadata JSON file: http://qiicr.org/dcmqi/#/seg.
 
-We will need to create a new _segment_ item in the web application for each of the labels we identified in the steps above. Here is how it will look like for label 1 (brain mask). Note that the "Segmented Property Type" drop-down contains a lot of items - start typing the name of the structure you are looking for, and it will suggest the matching names for you!
+We will need to create a new _segment_ item in the web application for each of the labels we identified in the steps above. In our case, the structures we have are anatomical structures, and so this is what should be selected from the (short) list under "Segmented Property Category". "Segmented Property Type" contains the list of all items that belong to a category. Its drop-down contains a lot of items - start typing the name of the structure you are looking for, and it will suggest the matching names for you! The result should look like this:
 
 ![](/use_cases/fs-brain-webapp.jpg)
 
