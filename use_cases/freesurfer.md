@@ -9,6 +9,8 @@ Segmentations of
 
 were produced by FreeSurfer by segmenting [this DICOM MR series](http://slicer.kitware.com/midas3/download/item/285806/CMET-MRhead.zip).
 
+We will go over the process of converting this representation into a standardized DICOM Segmentation image object representation.
+
 ## Conversion to DICOM SEG
 
 ### Visualization of the input data
