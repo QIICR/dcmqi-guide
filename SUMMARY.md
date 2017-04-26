@@ -4,6 +4,7 @@
 * [Quick Start](quick-start.md)
 * [Frequently Asked Questions \(FAQ\)](user_guide/faq.md)
 * [Tutorials](tutorials.md)
+* [Use cases](use-cases.md)
 * [User guide](user_guide/opening.md)
   * [Installation](user_guide/installation.md)
     * [Docker](user_guide/docker.md)
@@ -29,5 +30,5 @@
 * [Troubleshooting](user_guide/troubleshooting.md)
 * [Limitations](limitations.md)
 * [Open source credits](user_guide/opensource.md)
-* Developer guide
+* Use cases
 
