@@ -132,9 +132,11 @@ Too many to count, of course ... TBD
 
 ### Picking vocabulary terms is pain!
 
-It just is ...
+We will work on providing more expanded guide on how to use different resources to pick terminology.
 
 ### Size of the DICOM SEG representation is much larger than input
+
+We identified a potential solution to this problem, and will add a feature to `dcmqi` to store segmentations in a compressed form: https://github.com/QIICR/dcmqi/issues/244
 
 ```
 $ ls -lat
