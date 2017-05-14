@@ -8,5 +8,4 @@ dcmqi is leveraging multiple open source projects. We are gratefully acknowledgi
 * [zlib](http://www.zlib.net/)
 * [CMake](http://cmake.org)
 * [Ajv](http://epoberezkin.github.io/ajv/)
-* [dirent](https://github.com/tronkko/dirent)
 * [jsoncpp](https://github.com/open-source-parsers/jsoncpp)
