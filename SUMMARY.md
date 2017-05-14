@@ -9,7 +9,7 @@
 * [User guide](user_guide/opening.md)
   * [Installation](user_guide/installation.md)
     * [Binary packages](user_guide/binary_packages.md)
-    * [Docker](user_guide/docker.md)
+    * [Docker images](user_guide/docker.md)
     * [Build from source](user_guide/build_dcmqi.md)
     * [3D Slicer extension](user_guide/slicer_extension.md)
   * [General principles](user_guide/general.md)
