@@ -15,6 +15,14 @@ itkimage2segimage --inputImageList brain-label.nrrd \
   --inputMetadata brain-label-mapping.json
 ```
 
+**Note for the Windows users**
+
+We recommend you use _Windows PowerShell_ which is integrated in Windows 10 and further versions. The command line format on Windows will be different from that on Mac or Linux. Here is an example of the command line format on Windows:
+
+```
+```
+
+
 ## Using DICOM data with research applications
 
 If you get quantitative imaging data in DICOM format but want to use it in MATLAB or ITK, you can use `segimage2itkimage` to extract conventional NIfTI files of the segmentations or `tid1500reader` to convert structured reports into JSON.
