@@ -1,6 +1,6 @@
 # `itkimage2segimage`
 
-`itkimage2segimage` tool can be used to save the volumetric segmentation(s) stored as labeled pixels using any of the formats supported by ITK, such as NRRD or NIFTI, as a DICOM Segmentation Object (further referred to as SEG).
+`itkimage2segimage` tool can be used to save the volumetric segmentation\(s\) stored as labeled pixels using any of the formats supported by ITK, such as NRRD or NIFTI, as a DICOM Segmentation Object \(further referred to as SEG\).
 
 ## Usage
 
@@ -16,7 +16,7 @@
      individual files can contain one or more labels (segments). Segments
      from different files are allowed to overlap. See documentation for
      details.
-     
+
    --inputDICOMDirectory <std::string>
      Directory with the DICOM files corresponding to the original image
      that was segmented.
@@ -69,15 +69,54 @@ These lines correspond to the metadata attributes that will be populated in the 
       {
 ```
 
-The remainder of the file is a nested list (top-level list corresponds to the input segmentation files, and the inner list corresponds to the individual segments within each file) that specifies metadata attributes for each of the segments that are present in the input segmentation files.
+The remainder of the file is a nested list \(top-level list corresponds to the input segmentation files, and the inner list corresponds to the individual segments within each file\) that specifies metadata attributes for each of the segments that are present in the input segmentation files.
 
 For each of the segments, you will need to specify the following attributes that are mandatory:
 
 ```JSON
-        "LabelID": 1,
+        "labelID": 1,
 ```
 
-`LabelID` defines the value of the segment in the segmentation file that will be assigned attributes listed.
+`labelID` defines the value of the segment in the segmentation file that will be assigned attributes listed.
+
+**WARNING**: `labelID` is not stored in the output DICOM! The sole purpose of this attribute is to establish the connection between the labels encoded in the input ITK files and the metadata describing those labels (segments). The output DICOM files will have segments numbered consecutively starting from 1, and `labelID` should not be used to encode the type of structure being segmented. What the segment actually represents is indicated by a set of "codes": `SegmentedPropertyCategoryCodeSequence`, `SegmentedPropertyTypeCodeSequence`, and `SegmentedPropertyTypeModifierCodeSequence` (optionally), as discussed below. 
+
+Note that if you really wanted to preserve a particular identifier from a source format, though DICOM SegmentNumber is required to start from 1 and increase by 1 (and is used for internal reference within the segment instance), `SegmentLabel` can be anything that fits within a 64 character string.
+
+E.g., one could write:
+
+```
+SegmentedPropertyCategoryCodeSequence = (M-01000, SRT, "Morphologically
+Altered Structure")
+SegmentedPropertyTypeCodeSequence = (M-80003, SRT, "Neoplasm, Primary")
+SegmentNumber=1
+```
+and
+
+```
+SegmentLabel = 255
+```
+
+or
+
+```
+SegmentLabel = "primary tumor"
+```
+
+or
+
+```
+SegmentLabel = "primary tumor (255)"
+```
+
+or, what the standard recommends but does not mandate (use CodeMeaning
+of SegmentedPropertyTypeCodeSequence):
+```
+SegmentLabel = "Neoplasm, Primary"
+```
+Note that the anatomic region (where the primary tumor is) can be
+coded separately.
+
 
 ```JSON
         "SegmentDescription": "Liver Segmentation",
@@ -107,7 +146,7 @@ This attribute should be used to assign short name of the algorithm used to perf
 
 This attribute can be used to specify the RGB color with the recommended. Alternatively, `RecommendedDisplayCIELabValue` attribute can be used to specify the color in CIELab color space.
 
-```JSON        
+```JSON
         "SegmentedPropertyCategoryCodeSequence": {
           "CodeValue": "T-D0050",
           "CodingSchemeDesignator": "SRT",
@@ -120,10 +159,11 @@ This attribute can be used to specify the RGB color with the recommended. Altern
         },
 ```
 
-`SegmentedPropertyCategoryCodeSequence` and `SegmentedPropertyCategoryCodeSequence` are attributes that should be assigned code tuples to describe the meaning of what is being segmented. 
+`SegmentedPropertyCategoryCodeSequence` and `SegmentedPropertyCategoryCodeSequence` are attributes that should be assigned code tuples to describe the meaning of what is being segmented.
 
-Each code tuple consists of the three components:  `CodeValue`, `CodingSchemeDesignator` and `CodeMeaning`. `CodingSchemeDesignator` defines the "authority", or source of the code. Each `CodeValue` should be unique for a given `CodingSchemeDesignator`. `CodeMeaning` is a human-readable meaning of the code. DICOM defines several coding schemes recognized by the standard listed [in PS3.16 Section 8](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_8.html). 
+Each code tuple consists of the three components:  `CodeValue`, `CodingSchemeDesignator` and `CodeMeaning`. `CodingSchemeDesignator` defines the "authority", or source of the code. Each `CodeValue` should be unique for a given `CodingSchemeDesignator`. `CodeMeaning` is a human-readable meaning of the code. DICOM defines several coding schemes recognized by the standard listed [in PS3.16 Section 8](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_8.html).
 
-The task of selecting a code to describe a given segment may not be trivial, since there are implicit constraints/expectations on the values of these codes. As an example, the possible values of `SegmentedPropertyTypeCodeSequence` are predicated on the value of the `SegmentedPropertyCategoryCodeSequence`. It is also possible to define `SegmentedPropertyTypeModifierCodeSequence` that can be used , for example, to define the laterality. In some situations, it is appropriate or required to also specify anatomical location of the segmentation (e.g., organ a tumor was segmented). The latter can be achieved using `AnatomicRegionSequence` and `AnatomicRegionModifierSequence` coded attributes.
+The task of selecting a code to describe a given segment may not be trivial, since there are implicit constraints/expectations on the values of these codes. As an example, the possible values of `SegmentedPropertyTypeCodeSequence` are predicated on the value of the `SegmentedPropertyCategoryCodeSequence`. It is also possible to define `SegmentedPropertyTypeModifierCodeSequence` that can be used , for example, to define the laterality. In some situations, it is appropriate or required to also specify anatomical location of the segmentation \(e.g., organ a tumor was segmented\). The latter can be achieved using `AnatomicRegionSequence` and `AnatomicRegionModifierSequence` coded attributes.
 
-To simplify selection of codes for defining semantics of the segment, we provide a [helper web application](http://qiicr.org/dcmqi/#/seg) that can be used to browse supported codes and automatically generate the corresponding section of the JSON file. When no suitable codes can be found, it is also permissible to define so called _private_, or local, coding schemes (see [PS3.16 Section 8.2](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.2.html)). 
+To simplify selection of codes for defining semantics of the segment, we provide a [helper web application](http://qiicr.org/dcmqi/#/seg) that can be used to browse supported codes and automatically generate the corresponding section of the JSON file. When no suitable codes can be found, it is also permissible to define so called _private_, or local, coding schemes \(see [PS3.16 Section 8.2](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.2.html)\).
+

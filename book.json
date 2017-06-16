@@ -1,10 +1,11 @@
-{
+ {
     "plugins": [
         "anchorjs",
         "-lunr",
         "-search",
         "search-plus",
-        "versions"
+        "versions",
+        "etoc"        
     ],
     "pluginsConfig": {
         "anchorjs": {
@@ -21,8 +22,16 @@
             },
             {
                 "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/v/v1.0.0/",
-                "text": "Version 1.0.0"
+                "text": "v1.0.0"
             }]
+        },
+        "page-toc": {
+            "position": "before-first"
+        },
+        "etoc": {
+            "mindepth": 2,
+            "maxdepth": 4,
+            "notoc": false
         }
     }
 }

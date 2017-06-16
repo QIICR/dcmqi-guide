@@ -7,14 +7,36 @@ application is defined by _images_ that contain all of the components and steps 
 
 ## Usage
 
-You will first need to install Docker on your system following [these instructions](https://www.docker.com/products/overview). Docker is available for Mac, Windows and Linux.
+You will first need to install Docker on your system following [these instructions](https://www.docker.com/products/overview). Docker is available for Mac, Windows and Linux. For the most part Docker installation is straightforward, but some extra steps need to be taken on Windows as discussed below.
 
-If you use Docker on Windows, note the [system requirements](https://docs.docker.com/docker-for-windows/):
+### If you use Docker on Windows ...
+
+Note the [system requirements](https://docs.docker.com/docker-for-windows/):
 * you will need to have Windows 10 Pro or above
 * you will need to enable Hyper-V package (Docker will prompt you)
 * you will need to enable virtualization; [read this](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization-must-be-enabled) to learn how to check if it is enabled, and if it is not - here is [one guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Virtualization/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html) that may help you do that, but it assumes you can access your BIOS settings
 
-Once Docker is installed, pull the `dcmqi` image to your system to instantiate the `dcmqi` container:
+**IMPORTANT**: You will also need to share the drive you will be using to communicate data to and from Docker image in Docker Settings as shown in the screenshot below.
+
+Most likely you will experience the display of an error message similar to the one shown below. 
+```
+C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: \ 
+C: drive is not shared. Please share it in Docker for Windows Settings.
+See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
+```
+
+If you have this error, make sure that the drive, where the `HOST_DIR` is located, is shared:
+
+1. right click onto the Docker task bar icon and choose "Settings" 
+2. choose "Shared Drives" from the left menu (a list of drives that are available to share will be displayed)
+3. select the drive for your `HOST_DIR` to be shared
+4. confirm with Apply and continue
+
+![](/user_guide/assets/docker-windows.jpg)
+
+### Once Docker is installed
+
+Pull the `dcmqi` image to your system to instantiate the `dcmqi` container:
 
 ```
 $ docker pull qiicr/dcmqi
@@ -50,21 +72,6 @@ Docker containers cannot directly access the filesystem of the host. In order to
 ```
 
 The argument above will make the `HOST_DIR` path available within the container at `CONTAINER_DIR` location. The files that will be read or written by the converter run from the docker container should be referred to via the `CONTAINER_DIR` path.
-
-#### Docker for Windows
-Most likely you will experience the display of an error message similar to the one shown below. 
-```
-C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: \ 
-C: drive is not shared. Please share it in Docker for Windows Settings.
-See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
-```
-
-If you have this error, make sure that the drive, where the `HOST_DIR` is located, is shared:
-
-1. right click onto the Docker task bar icon and choose "Settings" 
-2. choose "Shared Drives" from the left menu (a list of drives that are available to share will be displayed)
-3. select the drive for your `HOST_DIR` to be shared
-4. confirm with apply and continue with 
 
 ## Usage example
 

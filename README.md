@@ -13,7 +13,7 @@ With `dcmqi` you can:
 * Convert DICOM data into a commonly used research file formats like JSON and NIfTI.
 * Integrate DICOM concepts into your analysis workflows so that intermediate results are encoded in a standardized manner, making it easy to share your data.
 
-# Quick start
+# Tutorials
 
 Check out our [introductory tutorial](http://qiicr.org/dcmqi-guide/tutorials/intro.html)!
 
