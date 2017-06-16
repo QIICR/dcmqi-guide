@@ -2,7 +2,7 @@
 
 ## Encoding analysis results in DICOM
 
-Many research studies such as imaging clinical trials or retrospective analysis of clinical data use a collection of databases, spreadsheets, and research data file formats such as NRRD, NIfTI, etc. As an example, a common practice to share segmentations is to provide NIfTI files along with a CSV file mapping label numbers to anatomical names.  
+Many research studies such as imaging clinical trials or retrospective analysis of clinical data use a collection of databases, spreadsheets, and research data file formats such as NRRD, NIfTI, etc. As an example, a common practice to share segmentations is to provide NIfTI files along with a CSV file mapping label numbers to anatomical names.
 
 As an alternative, you can use the `itkimage2segimage` command and related tools in `dcmqi` along with a JSON parameter file so that the segmentation output is described in terms of standardized vocabularies such as [SNOMED](https://en.wikipedia.org/wiki/Systematized_Nomenclature_of_Medicine), and segmentation can be saved in DICOM format side by side and cross-referenced with the source image data.  This can help remove ambiguity about the meaning of the results
 
@@ -17,11 +17,15 @@ itkimage2segimage --inputImageList brain-label.nrrd \
 
 **Note for the Windows users**
 
-We recommend you use _Windows PowerShell_ which is integrated in Windows 10 and further versions. The command line format on Windows will be different from that on Mac or Linux. Here is an example of the command line format on Windows:
+We recommend you use _Windows PowerShell_ which is integrated in Windows 10 and further versions. The command line format on Windows will be different from that on Mac or Linux. Here is an example of the command line format on Windows \(applied to using `dcmqi` from Docker\):
 
 ```
+docker run -v C:\Users\joe\myWorkDirectory:/tmp/myWorkDirectory qiicr/dcmqi \
+  itkimage2segimage --inputImageList /tmp/myWorkDirectory/brain-label.nrrd \
+  --inputDICOMDirectory /tmp/myWorkDirectory/Brain-DICOMs \
+  --outputDICOM /tmp/myWorkDirectory/brain.SEG.dcm \
+  --inputMetadata /tmp/myWorkDirectory/brain-label-mapping.json
 ```
-
 
 ## Using DICOM data with research applications
 
