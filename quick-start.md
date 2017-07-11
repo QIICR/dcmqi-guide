@@ -5,7 +5,7 @@ To start using `dcmqi`, you can download the binary package with the command lin
 * [**`dcmqi` Linux package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.0.5-linux-20170703-c2cb641.tar.gz)
 * [**`dcmqi` macOS package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.0.5-mac-20170710-4b2d11e.tar.gz)
 
-If you prefer using Docker, get the [**`dcmqi` image here**](https://hub.docker.com/r/qiicr/dcmqi/) or just do `docker pull qiicr/dcmqi`.
+If you prefer using Docker, download the [**`dcmqi` image from DockerHub**](https://hub.docker.com/r/qiicr/dcmqi/) with `docker pull qiicr/dcmqi`.
 
 ## Encoding analysis results in DICOM
 
