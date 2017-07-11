@@ -1,5 +1,12 @@
 # Quick Start
 
+To start using `dcmqi`, you can download the binary package with the command line converters for your operatings system following the links below:
+* [**`dcmqi` Windows package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.0.5-win64-20170710-4b2d11e.zip)
+* [**`dcmqi` Linux package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.0.5-linux-20170703-c2cb641.tar.gz)
+* [**`dcmqi` macOS package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.0.5-mac-20170710-4b2d11e.tar.gz)
+
+If you prefer using Docker, get the [**`dcmqi` image here**](https://hub.docker.com/r/qiicr/dcmqi/) or just do `docker pull qiicr/dcmqi`.
+
 ## Encoding analysis results in DICOM
 
 Many research studies such as imaging clinical trials or retrospective analysis of clinical data use a collection of databases, spreadsheets, and research data file formats such as NRRD, NIfTI, etc. As an example, a common practice to share segmentations is to provide NIfTI files along with a CSV file mapping label numbers to anatomical names.
