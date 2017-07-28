@@ -109,8 +109,8 @@ or
 SegmentLabel = "primary tumor (255)"
 ```
 
-or, what the standard recommends but does not mandate (use CodeMeaning
-of SegmentedPropertyTypeCodeSequence):
+or, what the standard recommends but does not mandate (use `CodeMeaning`
+of `SegmentedPropertyTypeCodeSequence`):
 ```
 SegmentLabel = "Neoplasm, Primary"
 ```
@@ -167,3 +167,4 @@ The task of selecting a code to describe a given segment may not be trivial, sin
 
 To simplify selection of codes for defining semantics of the segment, we provide a [helper web application](http://qiicr.org/dcmqi/#/seg) that can be used to browse supported codes and automatically generate the corresponding section of the JSON file. When no suitable codes can be found, it is also permissible to define so called _private_, or local, coding schemes \(see [PS3.16 Section 8.2](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.2.html)\).
 
+You can also see [the dedicated section](/user_guide/coding_schemes.md) of the documentation discussing the various options of searching for the coded terms that are available to you.
