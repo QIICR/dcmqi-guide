@@ -1,7 +1,5 @@
 # Searching for codes outside DICOM
 
-There are two options: you can either find a suitable code in an existing terminology, or [define your own coding scheme](new_coding_scheme.md).
-
 To find a suitable code in an existing terminology, you will need to know **what terminology to search**, and you will need **a tool that would facilitate your search**.
 
 DICOM has a preference for using SNOMED-CT codes. If you find a code in SNOMED-CT that would fill an important gap, but is not in the standard, you can propose inclusion of that new code into the standard. However, keep in mind that:
