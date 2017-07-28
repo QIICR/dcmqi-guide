@@ -132,7 +132,7 @@ Too many to count, of course ... TBD
 
 ### Picking vocabulary terms is pain!
 
-We will work on providing more expanded guide on how to use different resources to pick terminology.
+See more detailed instructions on how to search for the terms outside DICOM in [this section of the manual](/user_guide/coding_schemes.md).
 
 ### Size of the DICOM SEG representation is much larger than input
 
