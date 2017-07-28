@@ -13,7 +13,7 @@ DICOM relies on various sources of codes, all of which are listed in [PS3.16 Sec
 
 The first question while choosing the coding scheme is whether you will use an existing code, or define your own. Depending on your choice, follow one of the two recipes below.
 
-1. [**Use one of the codes defined in DICOM**](existing_coding_scheme.md): 
+1. [**Use one of the codes defined in DICOM**](existing_dicom_code.md) 
 
 2. If there is no matching code that is already included in DICOM, you can [**search one of the existing terminologies/ontologies for a suitable code**](searching_codes_outside_dicom.md): this option often requires more effort, but it will make your resulting data consistent with the existing controlled terminologies, facilitating reasoning on the resulting data, and aggregation of the results collected from different sources.  This “semantic” approach using standard codes allows for greater reuse and harmonization with other data sets, since the need for natural language parsing of plain text during “data mining” is obviated by the commonality of standard codes for standard entities, such as anatomical regions, types of tumor, etc. The choice of the coding scheme and specific codes will depend on the specific data conversion task.
 
