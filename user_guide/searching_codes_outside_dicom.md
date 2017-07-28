@@ -4,9 +4,9 @@ To find a suitable code in an existing terminology, you will need to know **what
 
 DICOM has a preference for using SNOMED-CT codes. If you find a code in SNOMED-CT that would fill an important gap, but is not in the standard, you can propose inclusion of that new code into the standard. However, keep in mind that:
 
-1) the process of contributing something into the DICOM standard is lengthy and can take a year before you see your change in the standard text;
-2) you will need to learn the procedures of contributing changes to the standard;
-3) although the SNOMED-CT codes included in the standard are [exempt from the licensing constraints of SNOMED-CT](https://qiicr.gitbooks.io/dcmqi-guide/user_guide/existing_coding_scheme.html#snomed-ct-license-exemption), the ontology defined by SNOMED-CT is NOT covered by the standard. Therefore, you will still need a secondary ontology if you are concerned about the license, and want to do reasoning on your data.
+1. the process of contributing something into the DICOM standard is lengthy and can take a year before you see your change in the standard text;
+2. you will need to learn the procedures of contributing changes to the standard;
+3. although the SNOMED-CT codes included in the standard are [exempt from the licensing constraints of SNOMED-CT](https://qiicr.gitbooks.io/dcmqi-guide/user_guide/existing_coding_scheme.html#snomed-ct-license-exemption), the ontology defined by SNOMED-CT is NOT covered by the standard. Therefore, you will still need a secondary ontology if you are concerned about the license, and want to do reasoning on your data.
 
 Therefore, it can be more practical to find a suitable term in an ontology other than SNOMED-CT.
 
