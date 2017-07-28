@@ -15,6 +15,7 @@
   * [General principles](user_guide/general.md)
   * [Coding schemes](user_guide/coding_schemes.md)
     * [DICOM-defined coding schemes](user_guide/existing_coding_scheme.md)
+    * [Searching for codes outside DICOM](user_guide/searching_codes_outside_dicom.md)
     * ["Private" coding schemes](user_guide/new_coding_scheme.md)
   * [Command line tools usage](user_guide/cmd_tools.md)
     * [Segmentations](user_guide/seg.md)
