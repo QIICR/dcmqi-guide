@@ -51,7 +51,7 @@ The search is successful, leading to [this entry](https://bioportal.bioontology.
 
 ```(61916, FMA, "Anterior cingulate gyrus")```
 
-2. **Using OLS**, you can [select the specific ontology](http://www.ebi.ac.uk/ols/ontologies), and [search specifically in FMA](http://www.ebi.ac.uk/ols/ontologies/fma) for the same term, which will result in the same code:
+2. **Using OLS**, you can [select the specific ontology](http://www.ebi.ac.uk/ols/ontologies), and [search specifically in FMA](http://www.ebi.ac.uk/ols/ontologies/fma) for the same term, which [will result in the same code](http://www.ebi.ac.uk/ols/ontologies/fma/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFMA_61916):
 
 ![](/user_guide/assets/ols_search_result.jpg)
 
