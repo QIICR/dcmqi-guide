@@ -55,7 +55,7 @@ The search is successful, leading to [this entry](https://bioportal.bioontology.
 
 ![](/user_guide/assets/ols_search_result.jpg)
 
-Note that OLS is (of writing this) using a "slimmed down version of FMA", but for common purposes perhaps this should still be sufficient.
+Note that OLS is (as of writing this) using a "slimmed down version of FMA", but for common purposes perhaps this should still be sufficient.
 
 
 
