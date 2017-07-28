@@ -12,7 +12,7 @@ Therefore, it can be more practical to find a suitable term in an ontology other
 
 In this regard, David Clunie, the long-time Editor of the DICOM standard, gave the following guidance on what terminologies to consider when a gap in the standard is identified:
 
-> [...] we (DICOM) use FMA then NeuroNames as a fallback when
+> [...] we (DICOM) use **FMA** then **NeuroNames** as a fallback when
 there are no appropriate SNOMED codes (yet), and have contacts
 with each of the appropriate groups to extend the schemes
 as necessary. We have not used RadLex for anatomy, since it
@@ -21,7 +21,7 @@ was derived from it, since the original RadLex protagonists
 had no interest in reinventing that wheel).
 
 > If you need to automate anatomical code mapping, consider
-using the UMLS as a tool ... frequently both SNOMED and FMA
+using the **UMLS** as a tool ... frequently both SNOMED and FMA
 terms map to a common UMLS code which helps a lot.
 
 >You can also use the FMAIDs included in the RadLex
