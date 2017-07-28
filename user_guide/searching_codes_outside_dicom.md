@@ -39,7 +39,7 @@ To search existing terminologies, you can consider using the following tools tha
 
 With both of these search engines you have an option of the advanced search to restrict the terms to a specific ontology.
 
-There are also some search tools that provide searches for the individual ontologies (such as FMA), but in some instances their search capabilities are not flexible enough, and as such we recommend the aggregator BioPortal and OLS. Unfortunately, neither BioPortal nor OLS include Neuronames, so you will need to use the specialized search tool for that ontology: http://braininfo.rprc.washington.edu/.
+There are also some search tools that provide searches for the individual ontologies (such as FMA), but in some instances their search capabilities are not flexible enough, and as such we recommend BioPortal and OLS. Unfortunately, neither BioPortal nor OLS include Neuronames, so you will need to use the specialized search tool for that ontology: http://braininfo.rprc.washington.edu/.
 
 Here is an illustrative example of searching for a term "anterior cingulate gyrus", which is not included in DICOM (note that you can use `AnatomicRegionModifier` to encode laterality of the structure).
 
