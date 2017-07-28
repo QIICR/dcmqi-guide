@@ -9,3 +9,4 @@ dcmqi is leveraging multiple open source projects. We are gratefully acknowledgi
 * [CMake](http://cmake.org)
 * [Ajv](http://epoberezkin.github.io/ajv/)
 * [jsoncpp](https://github.com/open-source-parsers/jsoncpp)
+* [scikit-ci-addons](http://scikit-ci-addons.readthedocs.io/)
