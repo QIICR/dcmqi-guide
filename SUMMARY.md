@@ -29,6 +29,8 @@
       * [paramap2itkimage](user_guide/paramap2itkimage.md)
 * [Developer guide](developer-guide.md)
   * [Update DCMTK for DCMQI](developer-guide/update-dcmtk-for-dcmqi.md)
+  * [Github release generation](developer-guide/github-release-generation.md)
 * [Troubleshooting](user_guide/troubleshooting.md)
 * [Limitations](limitations.md)
 * [Open source credits](user_guide/opensource.md)
+
