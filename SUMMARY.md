@@ -28,7 +28,7 @@
       * [itkimage2paramap](user_guide/itkimage2paramap.md)
       * [paramap2itkimage](user_guide/paramap2itkimage.md)
 * [Developer guide](developer-guide.md)
-  * [Update DCMTK for DCMQI](developer-guide/update-appveyor-dependencies.md)
+  * [Update Appveyor build dependencies](developer-guide/update-appveyor-dependencies.md)
   * [Github release generation](developer-guide/github-release-generation.md)
 * [Troubleshooting](user_guide/troubleshooting.md)
 * [Limitations](limitations.md)
