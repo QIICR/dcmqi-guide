@@ -5,7 +5,8 @@
         "-search",
         "search-plus",
         "versions",
-        "etoc"        
+        "etoc",
+        "ga"        
     ],
     "pluginsConfig": {
         "anchorjs": {
@@ -32,6 +33,9 @@
             "mindepth": 2,
             "maxdepth": 4,
             "notoc": false
+        },
+        "ga": {
+            "token": "UA-44852938-9"
         }
     }
 }
