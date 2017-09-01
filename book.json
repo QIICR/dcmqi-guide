@@ -13,19 +13,6 @@
             "placement": "right",
             "visible": "hover"
         },
-        "versions": {
-            "gitbookConfigURL": "https://raw.githubusercontent.com/QIICR/dcmqi-guide/master/book.json",
-            "options": [
-            {
-                "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/",
-                "text": "latest",
-                "selected": true
-            },
-            {
-                "value": "https://qiicr.gitbooks.io/dcmqi-guide/content/v/v1.0.0/",
-                "text": "v1.0.0"
-            }]
-        },
         "page-toc": {
             "position": "before-first"
         },
@@ -35,7 +22,7 @@
             "notoc": false
         },
         "ga": {
-            "token": "UA-44852938-9"
+            "token": "UA-44852938-10"
         }
     }
 }
