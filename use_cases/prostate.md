@@ -26,7 +26,7 @@ The first convenient place to start with generating JSON files for the `dcmqi` S
 
 The most confusing part is typically how to find the codes to encode specific items. In our case, some structures have codes already included in the DICOM standard, while some other codes had to be looked up in SNOMED.
 
-Make sure to select DICOM maste list in the "Segmentation Category Type Context Name". This will give you access to all of the codes in the standard. 
+Make sure to select DICOM master list in the "Segmentation Category Type Context Name". This will give you access to all of the codes in the standard. 
 
 * Whole prostate gland: we encode anatomic structure (short selection list in the Category selector), and can quickly locate the code for the prostate:
 ```
@@ -91,5 +91,9 @@ Make sure to select DICOM maste list in the "Segmentation Category Type Context 
         }
 ```
 
-
+Other attributes are rather trivial to populate:
+* `BodyPartExamined` should be `PROSTATE` (all caps is important! ... we should add explanation to this ...)
+* `SegmentDescription` can be populated with an abbreviated name reflecting the structure being segmented (note: this attribute can be at most 64 characters long!)
+* `SegmentAlgorithmName` should be set to `Slicer`
+* `SegmentAlgorithmType` to `MANUAL`, since that is how segmentations were created
 
