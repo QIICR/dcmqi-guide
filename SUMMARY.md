@@ -6,6 +6,7 @@
 * [Tutorials](tutorials.md)
 * [Use cases](use-cases.md)
   * [Multi-structure segmentation of the brain](use_cases/freesurfer.md)
+  * [Segmentations and measurements from prostate MRI](use_cases/prostate.md)
 * [User guide](user_guide/opening.md)
   * [Installation](user_guide/installation.md)
     * [Binary packages](user_guide/binary_packages.md)
