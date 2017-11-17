@@ -101,6 +101,8 @@ Other attributes are rather trivial to populate:
 * `SegmentAlgorithmType` to `MANUAL`, since that is how segmentations were created
 * Colors: these are up to the creator, but it is usually a good idea to pick colors that allow to easily differentiate regions. We use the color assignment summarized in [this spreadsheet](https://docs.google.com/spreadsheets/d/1A9N0wzag1GlVkjbck8XYV_kCqKPbcxJbua-e2Arv2V0/edit?usp=sharing).
 
+An almost complete JSON Meta Info file for these cases could look like this. This file contains only two placeholders which still need to be replaced with the correct value for the segmentation we are trying to convert: `@TimePoint@` and `@SeriesNumber@` . While all other properties in the JSON file 
+
 ## Conversion of measurements to DICOM SR TID1500
 
 **TBD**
