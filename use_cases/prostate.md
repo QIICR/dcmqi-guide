@@ -101,7 +101,110 @@ Other attributes are rather trivial to populate:
 * `SegmentAlgorithmType` to `MANUAL`, since that is how segmentations were created
 * Colors: these are up to the creator, but it is usually a good idea to pick colors that allow to easily differentiate regions. We use the color assignment summarized in [this spreadsheet](https://docs.google.com/spreadsheets/d/1A9N0wzag1GlVkjbck8XYV_kCqKPbcxJbua-e2Arv2V0/edit?usp=sharing).
 
-An almost complete JSON Meta Info file for these cases could look like this. This file contains only two placeholders which still need to be replaced with the correct value for the segmentation we are trying to convert: `@TimePoint@` and `@SeriesNumber@` . While all other properties in the JSON file 
+An almost complete JSON Meta Info file for these cases could look like this:
+
+```
+{
+  "@schema": "https://raw.githubusercontent.com/qiicr/dcmqi/master/doc/schemas/seg-schema.json#",
+  
+  "ContentCreatorName": "Reader01",
+  "ClinicalTrialSeriesID": "Session01",
+  "ClinicalTrialTimePointID": "@TimePoint@",
+  "SeriesDescription": "Segmentation",
+  "SeriesNumber": "@SeriesNumber@",
+  "InstanceNumber": "1",
+  "BodyPartExamined": "PROSTATE",
+  "segmentAttributes": [
+    [
+      {
+        "labelID": 1,
+        "SegmentDescription": "WholeGland",
+        "SegmentAlgorithmType": "MANUAL",
+        "SegmentAlgorithmName": "Slicer",
+        "SegmentedPropertyCategoryCodeSequence": {
+          "CodeValue": "T-D000A",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Anatomical Structure"
+        },
+        "SegmentedPropertyTypeCodeSequence": {
+          "CodeValue": "T-9200B",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Prostate"
+        },
+        "recommendedDisplayRGBValue": [51, 204, 0]
+      },
+      {
+        "labelID": 2,
+        "SegmentDescription": "PeripheralZone",
+        "SegmentAlgorithmType": "MANUAL",
+        "SegmentAlgorithmName": "Slicer",
+        "SegmentedPropertyCategoryCodeSequence": {
+          "CodeValue": "T-D000A",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Anatomical Structure"
+        },
+        "SegmentedPropertyTypeCodeSequence": {
+          "CodeValue": "T-D05E4",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Peripheral zone of the prostate"
+        },
+        "recommendedDisplayRGBValue": [153, 90, 50]
+      },
+      {
+        "labelID": 3,
+        "SegmentDescription": "TumorROI_PZ_1",
+        "SegmentAlgorithmType": "MANUAL",
+        "SegmentAlgorithmName": "Slicer",
+        "SegmentedPropertyCategoryCodeSequence": {
+          "CodeValue": "M-01000",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Morphologically Altered Structure"
+        },
+        "SegmentedPropertyTypeCodeSequence": {
+          "CodeValue": "M-01100",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Lesion"
+        },
+        "AnatomicRegionSequence": {
+          "CodeValue": "T-D05E4",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Peripheral zone of the prostate"
+        },
+        "recommendedDisplayRGBValue": [255, 255, 0]
+      },
+      {
+        "labelID": 8,
+        "SegmentDescription": "NormalROI_PZ_1",
+        "SegmentAlgorithmType": "MANUAL",
+        "SegmentAlgorithmName": "Slicer",
+        "SegmentedPropertyCategoryCodeSequence": {
+          "CodeValue": "T-D0050",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Tissue"
+        },
+        "SegmentedPropertyTypeCodeSequence": {
+          "CodeValue": "G-A460",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Normal"
+        },
+        "AnatomicRegionSequence": {
+          "CodeValue": "T-D05E4",
+          "CodingSchemeDesignator": "SRT",
+          "CodeMeaning": "Peripheral zone of the prostate"
+        },
+        "recommendedDisplayRGBValue": [51, 204, 0]
+      }
+    ]
+  ],
+  "ContentLabel": "SEGMENTATION",
+  "ContentDescription": "Image segmentation",
+  "ClinicalTrialCoordinatingCenterName": "dcmqi"
+}
+```
+
+Note that this file contains two placeholders which still need to be replaced with the correct value for the segmentations we are trying to convert: `@TimePoint@` and `@SeriesNumber@` . While all other properties in the JSON file are valid for all segmentation files, these two properties will differ for most files:
+
+1. In this particular case we have segmentations of two timepoints, so we have to make sure the JSON Meta Info has the correct 
 
 ## Conversion of measurements to DICOM SR TID1500
 
