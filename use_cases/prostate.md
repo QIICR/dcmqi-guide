@@ -22,7 +22,15 @@ The imaging-derived data discussed in that paper consists of the two components:
    * mean volume of the regions listed above, and
    * mean Apparent Diffusion Coefficient \(ADC\) values calculated over the segmentation-defined regions.
 
-## Conversion of segmentations to DICOM SEG
+## Conversion of Segmentations to DICOM SEG
+
+### Organizing the Data
+
+It is advisable to organize the original dicom image files in a directory structure like `<Patient>/<Study>/<Series>/orig-img-dicom/`. Since one required input of the converter are all dicom files which represent the original image on which the segmentation was created. Organizing the data as described above will allow us to just provide the correct series directory instead of listing all files of that series.
+
+All segmentations corresponding to a series should then be put into a folder like `<Patient>/<Study>/<Series>/segmentations/`. Into this folder we will also put the meta-information JSON file required to convert the segmentations.
+
+### Creating the Meta-Information JSON File
 
 The first convenient place to start with generating JSON files for the `dcmqi` SEG converter is always [http://qiicr.org/dcmqi/\#/seg](http://qiicr.org/dcmqi/#/seg).
 
@@ -101,12 +109,12 @@ Other attributes are rather trivial to populate:
 * `SegmentAlgorithmType` to `MANUAL`, since that is how segmentations were created
 * Colors: these are up to the creator, but it is usually a good idea to pick colors that allow to easily differentiate regions. We use the color assignment summarized in [this spreadsheet](https://docs.google.com/spreadsheets/d/1A9N0wzag1GlVkjbck8XYV_kCqKPbcxJbua-e2Arv2V0/edit?usp=sharing).
 
-An almost complete JSON Meta Info file for these cases could look like this:
+An almost complete meta-information JSON file for these cases could look like this:
 
 ```
 {
   "@schema": "https://raw.githubusercontent.com/qiicr/dcmqi/master/doc/schemas/seg-schema.json#",
-  
+
   "ContentCreatorName": "Reader01",
   "ClinicalTrialSeriesID": "Session01",
   "ClinicalTrialTimePointID": "@TimePoint@",
@@ -202,9 +210,12 @@ An almost complete JSON Meta Info file for these cases could look like this:
 }
 ```
 
-Note that this file contains two placeholders which still need to be replaced with the correct value for the segmentations we are trying to convert: `@TimePoint@` and `@SeriesNumber@` . While all other properties in the JSON file are valid for all segmentation files, these two properties will differ for most files:
+Note that this file contains two placeholders which still need to be replaced with the correct value for the segmentations we are trying to convert: `@TimePoint@` and `@SeriesNumber@` . While all other properties in the JSON file are valid for all segmentation files, these two properties will differ for different segmentation files:
 
-1. In this particular case we have segmentations of two timepoints, so we have to make sure the JSON Meta Info has the correct 
+1. In this particular case we have segmentations of two timepoints, so we have to make sure the meta-information JSON file we use when running the converter has the correct timpoint encoded.
+2. Segmentations based on one series in a study should also have a unique series number within that study
+
+This means we will need several slightly different JSON files to perform the conversion. The best approach is to create them dynamically with a script that inserts the correct values for the placeholders. If we follow the data organization approach suggested above we should have one JSON file per `<Patient>/<Study>/<Series>/segmentations/` folder.
 
 ## Conversion of measurements to DICOM SR TID1500
 
