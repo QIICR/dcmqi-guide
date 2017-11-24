@@ -243,7 +243,7 @@ Note that the order of the files for `--inputImageList` has to exactly match the
 
 ## Conversion of measurements to DICOM SR TID1500
 
-Overall, the conversion of segmentation-based measurements into a DICOM Structured Report that follows template 1500 is supported by the `dcmqi` tool `tid1500writer`. This tool expects as input the following items:
+Overall, the conversion of segmentation-based measurements into a DICOM Structured Report that follows [SR template 1500](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500) is supported by the `dcmqi` tool `tid1500writer`. This tool expects as input the following items:
 * DICOM image series that was used for segmentation
 * DICOM Segmentation image series containing the segmentation result
 * JSON file containing the individual measurements, and additional metadata needed by DICOM
