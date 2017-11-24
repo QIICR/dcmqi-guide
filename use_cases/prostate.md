@@ -116,7 +116,7 @@ An almost complete meta-information JSON file for these cases could look like th
 ```
 {
   "@schema": "https://raw.githubusercontent.com/qiicr/dcmqi/master/doc/schemas/seg-schema.json#",
-  
+
   "ContentCreatorName": "Reader01",
   "ClinicalTrialSeriesID": "Session01",
   "ClinicalTrialTimePointID": "@TimePoint@",
@@ -239,7 +239,7 @@ itkimage2segimage.exe
 
 This will place a file `<out-name>.SEG.dcm` into the segmentations folder. The SEG object will contain all four segmentations.
 
-Note that the order of the files for `--inputImageList` has to exactly match the order of the `segmentAttributes` list in the meta.json. If the order of `--inputImageList` is different or contains less or more files, we need to adjust the meta.json accordingly.
+Note that the order of the files for `--inputImageList` has to exactly match the order of the `segmentAttributes` list in the meta.json. If the order of files in `--inputImageList` is different or contains less or more files, we need to adjust the meta.json accordingly.
 
 ## Conversion of measurements to DICOM SR TID1500
 
