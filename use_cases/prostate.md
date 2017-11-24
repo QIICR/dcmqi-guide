@@ -22,6 +22,8 @@ The imaging-derived data discussed in that paper consists of the two components:
    * mean volume of the regions listed above, and
    * mean Apparent Diffusion Coefficient \(ADC\) values calculated over the segmentation-defined regions.
 
+Each segmented structure is saved in an individual itk nrrd format file.
+
 ## Conversion of Segmentations to DICOM SEG
 
 ### Organizing the Data
@@ -114,7 +116,7 @@ An almost complete meta-information JSON file for these cases could look like th
 ```
 {
   "@schema": "https://raw.githubusercontent.com/qiicr/dcmqi/master/doc/schemas/seg-schema.json#",
-
+  
   "ContentCreatorName": "Reader01",
   "ClinicalTrialSeriesID": "Session01",
   "ClinicalTrialTimePointID": "@TimePoint@",
@@ -124,7 +126,7 @@ An almost complete meta-information JSON file for these cases could look like th
   "BodyPartExamined": "PROSTATE",
   "segmentAttributes": [
     [
-      {
+     {
         "labelID": 1,
         "SegmentDescription": "WholeGland",
         "SegmentAlgorithmType": "MANUAL",
@@ -140,7 +142,9 @@ An almost complete meta-information JSON file for these cases could look like th
           "CodeMeaning": "Prostate"
         },
         "recommendedDisplayRGBValue": [51, 204, 0]
-      },
+      }
+    ],
+    [
       {
         "labelID": 2,
         "SegmentDescription": "PeripheralZone",
@@ -157,7 +161,9 @@ An almost complete meta-information JSON file for these cases could look like th
           "CodeMeaning": "Peripheral zone of the prostate"
         },
         "recommendedDisplayRGBValue": [153, 90, 50]
-      },
+      }
+    ],
+    [
       {
         "labelID": 3,
         "SegmentDescription": "TumorROI_PZ_1",
@@ -179,8 +185,10 @@ An almost complete meta-information JSON file for these cases could look like th
           "CodeMeaning": "Peripheral zone of the prostate"
         },
         "recommendedDisplayRGBValue": [255, 255, 0]
-      },
-      {
+      }
+    ],
+    [
+       {
         "labelID": 8,
         "SegmentDescription": "NormalROI_PZ_1",
         "SegmentAlgorithmType": "MANUAL",
@@ -216,6 +224,22 @@ Note that this file contains two placeholders which still need to be replaced wi
 2. Segmentations based on one series in a study should also have a unique series number within that study
 
 This means we will need several slightly different JSON files to perform the conversion. The best approach is to create them dynamically with a script that inserts the correct values for the placeholders. If we follow the data organization approach suggested above we should have one JSON file per `<Patient>/<Study>/<Series>/segmentations/` folder.
+
+### Running the Converter
+
+The converter needs to run separately for each segmentation folder. Switch to a `<Patient>/<Study>/<Series>/segmentations/` folder. Then run the converter like this:
+
+```
+itkimage2segimage.exe
+--inputImageList WholeGland.nrrd,PeripheralZone.nrrd,TumorROI_PZ_1.nrrd,NormalROI_PZ_1.nrrd
+--inputDICOMDirectory <Patient>/<Study>/<Series>/orig-img-dicom/
+--inputMetadata meta.json
+--outputDICOM <out-name>.SEG.dcm
+```
+
+This will place a file `<out-name>.SEG.dcm` into the segmentations folder. The SEG object will contain all four segmentations.
+
+Note that the order of the files for `--inputImageList` has to exactly match the order of the `segmentAttributes` list in the meta.json. If the order of `--inputImageList` is different or contains less or more files, we need to adjust the meta.json accordingly.
 
 ## Conversion of measurements to DICOM SR TID1500
 
