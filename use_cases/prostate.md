@@ -243,5 +243,155 @@ Note that the order of the files for `--inputImageList` has to exactly match the
 
 ## Conversion of measurements to DICOM SR TID1500
 
-**TBD**
+Overall, the conversion of segmentation-based measurements into a DICOM Structured Report that follows template 1500 is supported by the `dcmqi` tool `tid1500writer`. This tool expects as input the following items:
+* DICOM image series that was used for segmentation
+* DICOM Segmentation image series containing the segmentation result
+* JSON file containing the individual measurements, and additional metadata needed by DICOM
 
+Assuming segmentation conversion above was successful, a JSON file that specifies metadata for the structured report overall, and for the individual measurements.
+
+We do not provide a web application to populate such file, so at this moment, the easiest is to start with an example and update it as needed. Let's start with [this sample dataset](https://github.com/QIICR/dcmqi/blob/master/doc/examples/sr-tid1500-ct-liver-example.json).
+
+Before discussing how to initialize individual items, we need to decide how to organize measurements. There are at least two options here:
+1. Save measurements for each combination of structure/image series as a separate DICOM SR document.
+2. Save measurements for all structures segmented in a given series in a single DICOM SR document.
+
+Considering we made a decision to save all segments (whole gland, peripheral zone, tumor region, etc) in a single DICOM SEG file, it is logical to follow the same pattern and store per-segment measurements in separate groups within the same DICOM SR.
+
+Here are the items we will need to update:
+
+---
+```
+"SeriesDescription": "Measurements",
+"SeriesNumber": "1001",
+"InstanceNumber": "1",
+```
+
+Although `SeriesNumber` is not formalized by DICOM, it is usually expected by the users that it should be unique. We can follow the following formula (or similar) to assign series number: `<SeriesNumber of the image series being segmented>+2000`.
+
+---
+
+```
+"compositeContext": [
+  ...
+]
+```
+
+This item contains the name of a DICOM file that should be used to populate composite context (information about study, patient, equipment, which is the same for all series in a study) of the output DICOM object. We can set this item to be the Segmentation DICOM object, or any of the DICOM instances from the input image.
+
+---
+
+```
+"imageLibrary": [
+  ...
+],
+```
+
+`imageLibrary` should contain the list of all DICOM instances from the source image series being segmented. A component of the output SR document will include certain attributes of these instances, and will reference them by `SOPInstanceUID`.
+
+---
+
+```
+"observerContext": {
+  "ObserverType": "PERSON",
+  "PersonObserverName": "Reader1"
+},
+```
+
+In our case, there was a single reader, so we can leave this item unchanged.
+
+---
+
+```
+"VerificationFlag": "VERIFIED",
+"CompletionFlag": "COMPLETE",
+
+"activitySession": "1",
+"timePoint": "1",
+```
+
+These items can also remain unchanged, since we share final measurements. The exception is `timePoint`, which should have values of 1 for baseline, and 2 for the followup.
+
+---
+
+Next, we need to populate the list of `Measurements`. Each of the items (measurement groups) in this list will contain a list of attributes that apply to all individual measurements within the group, and a list of individual measurements. 
+
+In our case, each measurement group will contain measurements calculated over a single segmented structure.
+
+First, let's look at the top-level attributes:
+
+```
+  "Measurements": [
+    {
+      "TrackingIdentifier": "Measurements group 1",
+```
+`TrackingIdentifier` is a human-readable description of the measurements group. We can use the pattern `<structure name> measurements`, i.e., `Whole gland measurements` etc.
+
+---
+
+```
+      "ReferencedSegment": 1,
+      "SourceSeriesForImageSegmentation": "1.2.392.200103.20080913.113635.1.2009.6.22.21.43.10.23430.1",
+      "segmentationSOPInstanceUID": "1.2.276.0.7230010.3.1.4.0.42154.1458337731.665796",
+```
+
+These items should be propagated given the information about source image series and the segmentation generated in the previous conversion step. Availability of these items allows to link measurements with the results of segmentation and source image series.
+
+---
+The next items -- `Finding` and `FindingSite` -- are code tuples that allows us to encode what was the region over which measurement was done, and where it was located. These items are somewhat similar to what we had to specify for encoding segmentation.
+
+Here are the codes we can use for each of the structures over which we performed the measurements (each tuple in parentheses contains `(CodeMeaning, CodingSchemeDesignator, CodeValue)`:
+
+* Whole gland: 
+ * Finding: `("Entire Gland", "SRT", T-F6078)`
+ * Finding site: `("Prostate", "SRT", "T-9200B")`
+* Peripheral zone:
+ * Finding: `("Entire", "SRT", "R-404A4")`
+ * Finding site: `("Peripheral zone of the prostate", "SRT", "T-D05E4")`
+* Suspected tumor tissue:
+ * Finding: `("Abnormal", "SRT", "R-42037")`
+ * Finding site: `("Peripheral zone of the prostate", "SRT", "T-D05E4")`
+* Normal tissue:
+ * Finding: `("Normal", "SRT", "G-A460")`
+ * Finding site: Finding site: `("Peripheral zone of the prostate", "SRT", "T-D05E4")`
+
+---
+
+Following the description of the top-level attributes for a measurement group is the list of individual measurements. Each measurement item must include the following attributes:
+
+* `value`: the measurement value
+* `quantity`, `units`, and `derivationModifier`: coded tuples describing the quantity. In our case, measurements are either volume of the segmented regions, or the mean value of the Apparent Diffusion Coefficient (ADC).
+
+**Volume**:
+```
+"quantity": {
+  "CodeValue": "G-D705", 
+  "CodingSchemeDesignator": "SRT", 
+  "CodeMeaning": "Volume")
+ },
+"units": {
+  "CodeValue": "cm3",
+  "CodingSchemeDesignator": "UCUM",
+  "CodeMeaning": "cubic centimeter"
+}
+```
+
+**Mean ADC** (note how the fact that we encode the mean value of ADC over the region is post-coordinated with the `derivationModifier`):
+```
+"quantity": {    
+  "CodeValue": "113041",
+  "CodingSchemeDesignator": "DCM",
+  "CodeMeaning": "Apparent Diffusion Coefficient"
+},
+"units": {
+   "CodeValue": "um2/s",
+   "CodingSchemeDesignator": "UCUM",
+   "CodeMeaning": "um2/s"
+ },
+"derivationModifier": {
+   "CodeValue": "R-00317",
+   "CodingSchemeDesignator": "SRT",
+   "CodeMeaning": "Mean"
+}
+```
+ 
