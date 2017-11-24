@@ -394,4 +394,7 @@ Following the description of the top-level attributes for a measurement group is
    "CodeMeaning": "Mean"
 }
 ```
- 
+
+## Conversion of the ADC maps
+
+Optionally, we can also encode the ADC maps generated on the GE imaging post-processing equipment and stored as MR objects. Instead, we can use the DICOM Parametric map object, since it allows to explicitly communicate quantity, units and the type of ADC fitting approach that was used. [This example JSON](https://github.com/QIICR/dcmqi/blob/master/doc/examples/pm-example.json) can be used directly for this conversion task.
