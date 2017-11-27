@@ -221,7 +221,7 @@ An almost complete meta-information JSON file for these cases could look like th
 Note that this file contains two placeholders which still need to be replaced with the correct value for the segmentations we are trying to convert: `@TimePoint@` and `@SeriesNumber@` . While all other properties in the JSON file are valid for all segmentation files, these two properties will differ for different segmentation files:
 
 1. In this particular case we have segmentations of two timepoints, so we have to make sure the meta-information JSON file we use when running the converter has the correct timpoint encoded.
-2. Segmentations based on one series in a study should also have a unique series number within that study. We can follow the following formula \(or similar\) to assign series number: `<SeriesNumber of the image series being segmented>+1000`.
+2. Segmentations based on one series in a study should also have a unique series number within that study. We can follow the following formula \(or similar\) to assign series number: `<SeriesNumber of the image series>+1000`.
 
 This means we will need several slightly different JSON files to perform the conversion. The best approach is to create them dynamically with a script that inserts the correct values for the placeholders. If we follow the data organization approach suggested above we should have one JSON file per `<Patient>/<Study>/<Series>/segmentations/` folder.
 
