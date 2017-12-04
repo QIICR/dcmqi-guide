@@ -249,7 +249,9 @@ Overall, the conversion of segmentation-based measurements into a DICOM Structur
 * DICOM Segmentation image series containing the segmentation result
 * JSON file containing the individual measurements, and additional metadata needed by DICOM
 
-Assuming segmentation conversion above was successful, a JSON file that specifies metadata for the structured report overall, and for the individual measurements.
+### Creating the Measurements JSON file
+
+Assuming the segmentation conversion above was successful, a JSON file is required that specifies metadata for the structured report overall, and for the individual measurements.
 
 We do not provide a web application to populate such file, so at this moment, the easiest is to start with an example and update it as needed. Let's start with [this sample dataset](https://github.com/QIICR/dcmqi/blob/master/doc/examples/sr-tid1500-ct-liver-example.json).
 
@@ -399,6 +401,16 @@ Following the description of the top-level attributes for a measurement group is
    "CodingSchemeDesignator": "SRT",
    "CodeMeaning": "Mean"
 }
+```
+
+### Running the Converter
+
+```
+tid1500writer.exe
+--inputImageLibraryDirectory <Patient>/<Study>/<Series>/orig-img-dicom/
+--inputCompositeContextDirectory <Patient>/<Study>/<Series>/segmentations/
+--inputMetadata measurements.json
+--outputDICOM <out-name>.SR.dcm
 ```
 
 ## Conversion of the ADC maps
