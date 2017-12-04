@@ -405,6 +405,8 @@ Following the description of the top-level attributes for a measurement group is
 
 ### Running the Converter
 
+The converter needs to run separately for each measurements JSON file. Switch to the folder where you placed the measurements JSON file \(preferably this should be a folder separate from the other data\). Then execute the following command:
+
 ```
 tid1500writer.exe
 --inputImageLibraryDirectory <Patient>/<Study>/<Series>/orig-img-dicom/
@@ -412,6 +414,8 @@ tid1500writer.exe
 --inputMetadata measurements.json
 --outputDICOM <out-name>.SR.dcm
 ```
+
+This will create a `<out-name>.SR.dcm` which contains the structured report with all measurements referencing the original images and the segmentations from which the measurements originated.
 
 ## Conversion of the ADC maps
 
