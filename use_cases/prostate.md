@@ -342,6 +342,10 @@ First, let's look at the top-level attributes:
 
 These items should be propagated given the information about source image series and the segmentation generated in the previous conversion step. Availability of these items allows to link measurements with the results of segmentation and source image series.
 
+* `ReferencedSegment`: The SegmentNumber for the corresponding segment in the DICOM segmentation object.
+* `sourceSeriesInstanceUID`: The SeriesInstanceUID of the actual image from which the segmentation was created.
+* `segmentationSOPInstanceUID`: The SOPInstanceUID of the segmentation object.
+
 ---
 
 The next items -- `Finding` and `FindingSite` -- are code tuples that allows us to encode what was the region over which measurement was done, and where it was located. These items are somewhat similar to what we had to specify for encoding segmentation.
