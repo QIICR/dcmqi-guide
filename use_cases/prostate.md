@@ -107,7 +107,7 @@ Other attributes are rather trivial to populate:
 
 * `BodyPartExamined` should be `PROSTATE` \(all caps is important! ... we should add explanation to this ...\)
 * `SegmentDescription` can be populated with an abbreviated name reflecting the structure being segmented \(note: this attribute can be at most 64 characters long!\)
-* `SegmentAlgorithmName` should be set to `Slicer`
+* `SegmentAlgorithmName` not applicable, since segmentation was done manually
 * `SegmentAlgorithmType` to `MANUAL`, since that is how segmentations were created
 * Colors: these are up to the creator, but it is usually a good idea to pick colors that allow to easily differentiate regions. We use the color assignment summarized in [this spreadsheet](https://docs.google.com/spreadsheets/d/1A9N0wzag1GlVkjbck8XYV_kCqKPbcxJbua-e2Arv2V0/edit?usp=sharing).
 
