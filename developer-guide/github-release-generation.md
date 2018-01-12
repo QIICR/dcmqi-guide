@@ -4,7 +4,7 @@ To generate a release, you will need to set up GPG keys on your platform to sign
 
 1. Check that tests pass on all platforms
 
-2. Edit `CMakeLists.txt` and update `DCMQI_VERSION_*` variables
+2. Edit `CMakeLists.txt` and update `DCMQI_VERSION_*` variables, update `README.md` file to point to the updated version number for the Docker image.
 
 3. Commit changes using message like `cmake: Set DCMQI version to 1.0.7`
 
@@ -20,6 +20,8 @@ To generate a release, you will need to set up GPG keys on your platform to sign
   git push origin vX.Y.Z
   git push origin master
   ```
+  
+6. Once new packages are generated, update documentation [Quick Start](https://qiicr.gitbooks.io/dcmqi-guide/content/quick-start.html) section to point to the new package.
 
 ## Under the hood ...
 
