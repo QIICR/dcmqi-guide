@@ -57,6 +57,6 @@ The search is successful, leading to [this entry](https://bioportal.bioontology.
 
 Note that OLS is (as of writing this) using a "slimmed down version of FMA", but for common purposes perhaps this should still be sufficient.
 
+## References
 
-
-
+* Definition of post-coordinated codes from UMLS: https://utsreport.nlm.nih.gov/umlsreport/sourceDocs/postcoordinated.html

@@ -352,7 +352,7 @@ The next items -- `Finding` and `FindingSite` -- are code tuples that allows us 
 
 Here are the codes we can use for each of the structures over which we performed the measurements \(each tuple in parentheses contains `(CodeMeaning, CodingSchemeDesignator, CodeValue)`:
 
-* Whole gland: 
+* Whole gland:
   * Finding: `("Entire Gland", "SRT", T-F6078)`
   * Finding site: `("Prostate", "SRT", "T-9200B")`
 * Peripheral zone:
@@ -376,8 +376,8 @@ Following the description of the top-level attributes for a measurement group is
 
 ```
 "quantity": {
-  "CodeValue": "G-D705", 
-  "CodingSchemeDesignator": "SRT", 
+  "CodeValue": "G-D705",
+  "CodingSchemeDesignator": "SRT",
   "CodeMeaning": "Volume")
  },
 "units": {
@@ -387,7 +387,7 @@ Following the description of the top-level attributes for a measurement group is
 }
 ```
 
-**Mean ADC** \(note how the fact that we encode the mean value of ADC over the region is post-coordinated with the `derivationModifier`\):
+**Mean ADC** \(note how the fact that we encode the mean value of ADC over the region is [post-coordinated](https://utsreport.nlm.nih.gov/umlsreport/sourceDocs/postcoordinated.html) with the `derivationModifier`\):
 
 ```
 "quantity": {    
@@ -424,4 +424,3 @@ This will create a `<out-name>.SR.dcm` which contains the structured report with
 ## Conversion of the ADC maps
 
 Optionally, we can also encode the ADC maps generated on the GE imaging post-processing equipment and stored as MR objects. Instead, we can use the DICOM Parametric map object, since it allows to explicitly communicate quantity, units and the type of ADC fitting approach that was used. [This example JSON](https://github.com/QIICR/dcmqi/blob/master/doc/examples/pm-example.json) can be used directly for this conversion task.
-
