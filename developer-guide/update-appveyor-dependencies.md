@@ -10,6 +10,7 @@ The modified version of DCMTK is located in the dcmqi branch of the [dcmtk-dcmqi
 
 1. Check out the version of DCMTK that needs to be used
 2. Rebase the dcmqi branch of dcmtk-dcmqi to the new version.
+3. Update the name of the package to reflect the version and date of the DCMTK package to be created (`deploy/release` section of the `appveyor.yml`)
 3. Push the updated dcmqi branch to `QIICR/dcmtk-dcmqi`
 
 Appveyor build will be triggered automatically, and barring any build issues a new release will be uploaded to https://github.com/QIICR/dcmtk-dcmqi/releases.
