@@ -1,4 +1,4 @@
-# Table of contents
+# Summary
 
 * [Introduction](README.md)
 * [Quick Start](quick-start.md)
@@ -31,6 +31,7 @@
 * [Developer guide](developer-guide/README.md)
   * [Update Appveyor build dependencies](developer-guide/update-appveyor-dependencies.md)
   * [Github release generation](developer-guide/github-release-generation.md)
+  * [Add new attribute to the schema](developer-guide/add-new-attribute-to-the-schema.md)
 * [Troubleshooting](troubleshooting.md)
 * [Limitations](limitations.md)
 * [Open source credits](opensource.md)
