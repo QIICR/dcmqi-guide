@@ -107,6 +107,10 @@ Below is the list of various tools that are used by medical imaging researchers,
 
 ## Usage related questions
 
+### I cannot load DICOM SEG into Slicer
+
+Make sure you install the [Quantitative Reporting extension](https://qiicr.gitbooks.io/quantitativereporting-guide/docs/install.html).
+
 ### Conversion fails with the "Missing Attribute(s)" error - what should I do?
 
 Image-derived objects, such as segmentations or parametric map, inherit some of the attributes from the image
@@ -155,3 +159,13 @@ dcmodify -i "ProcedureCodeSequence[0].CodingSchemeDesignator=99UNKNOWN" 000000.d
 Note the "99" prefix used for the coding scheme designator. Unless you know which coding scheme the specific code
 belongs to, you should always use this prefix to indicate that the coding scheme is "private" (not one of [the coding
 schemes defined for use in the DICOM standard](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_8.html)).
+
+### I cannot scroll when loading DICOM SEG into 3D Slicer
+
+The way 3D Slicer works at the moment is that you cannot scroll over the slices of the segmentation
+unless your segmentation is accompanied by the image that was segmented.
+
+Try importing the DICOM image you segmented into the Slicer DICOM database, and load both the segmentation
+and image series.
+
+If you agree this behavior is confusing, add your voice to [this discussion on 3D Slicer forum](https://discourse.slicer.org/t/unable-to-scroll-when-loading-segmentation/6986?u=fedorov).
