@@ -2,9 +2,9 @@
 
 To start using `dcmqi`, you can download the binary package with the command line converters for your operatings system following the links below for the latest \(v1.0.9\) release:
 
-* [`dcmqi` **Windows package**](https://github.com/QIICR/dcmqi/releases/download/v1.0.9/dcmqi-1.0.9-win64.zip)
-* [`dcmqi` **Linux package**](https://github.com/QIICR/dcmqi/releases/download/v1.0.9/dcmqi-1.0.9-linux.tar.gz)
-* [`dcmqi` **macOS package**](https://github.com/QIICR/dcmqi/releases/download/v1.0.9/dcmqi-1.0.9-mac.tar.gz)
+* [`dcmqi` **Windows package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.2.1-win64-20190502-c3b40ac.zip)
+* [`dcmqi` **Linux package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.2.1-linux-20190502-c3b40ac.tar.gz)
+* [`dcmqi` **macOS package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.2.1-mac-20190502-c3b40ac.tar.gz)
 
 You can also find the packages corresponding to the latest version of the source code [here](https://github.com/QIICR/dcmqi/releases/tag/latest).
 
@@ -53,4 +53,3 @@ tid1500reader --inputDICOM pet-measurements.SR-1500.dcm \
 ## Integrating DICOM into your analysis workflow
 
 If you are designing a new analysis workflow from scratch, you can consider using DICOM as the format to store intermediate results. If you look at the [Quantitative Reporting extension to 3D Slicer](https://www.slicer.org/wiki/Documentation/Nightly/Extensions/QuantitativeReporting), you can see how to create analysis results in native DICOM format that use standard terminologies and units, while retaining their linkage to the original input data. You could consider using `dcmqi` utilities to convert to and from research formats.
-
