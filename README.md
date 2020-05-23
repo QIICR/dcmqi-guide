@@ -1,3 +1,9 @@
+# _This location of dcmqi documentation is being phased out!_
+
+# **Check for new location of documentation at **[**https://github.com/QIICR/dcmqi**](https://github.com/QIICR/dcmqi)
+
+---
+
 # Introduction
 
 ## About
@@ -32,6 +38,7 @@ You can communicate you feedback, feature requests, comments or problem reports 
   group\]\([https://groups.google.com/forum/\#!forum/dcmqi](https://groups.google.com/forum/#!forum/dcmqi)\)
 
 * [submit issue](https://github.com/QIICR/dcmqi/issues/new) on dcmqi bug tracker
+
 * leave feedback directly in the [dcmqi user manual](https://qiicr.gitbooks.io/dcmqi-guide)
 * send email to [Andrey Fedorov](http://fedorov.github.io)
 
@@ -51,3 +58,4 @@ This work is supported primarily by the National Institutes of Health, National 
 2. Herz C, Fillion-Robin J-C, Onken M, Riesmeier J, Lasso A, Pinter C, Fichtinger G, Pieper S, Clunie D, Kikinis R, Fedorov A. _dcmqi: An Open Source Library for Standardized Communication of Quantitative Image Analysis Results Using DICOM_. _Cancer Research_. 2017;77\(21\):e87–e90 [http://cancerres.aacrjournals.org/content/77/21/e87](http://cancerres.aacrjournals.org/content/77/21/e87).
 
 A
+
