@@ -14,6 +14,10 @@ However, keep in mind that:
 2. you will need to learn the procedures of contributing changes to the standard;
 3. although the SNOMED-CT codes included in the standard are [exempt from the licensing constraints of SNOMED-CT](https://qiicr.gitbooks.io/dcmqi-guide/user_guide/existing_coding_scheme.html#snomed-ct-license-exemption), the ontology defined by SNOMED-CT is NOT covered by the exemption. Therefore, you will still need a secondary ontology if you are concerned about the license, and want to do reasoning on your data.
 
+If a certain term is not found in SNOMED, it might be possible to add it. If you would like to request adding a new term in the context of DICOM, you can contact DICOM secretariat at [http://www.dicomstandard.org/contact/secretariat/](http://www.dicomstandard.org/contact/secretariat/), and they would then pass your request to the person responsible for the interactions with SNOMED. Also, each country has its SNOMED national member contact: [http://www.snomed.org/our-customers/members](http://www.snomed.org/our-customers/members), in case you want to make a non-DICOM related request.
+
+### Using existing terminologies other than SNOMED
+
 Therefore, it can be more practical to find a suitable term in an ontology other than SNOMED-CT.
 
 In this regard, David Clunie, the long-time Editor of the DICOM standard, gave the following guidance on what terminologies to consider when a gap in the standard is identified:
@@ -62,6 +66,10 @@ The search is successful, leading to [this entry](https://bioportal.bioontology.
 ![](../../.gitbook/assets/ols_search_result.jpg)
 
 Note that OLS is \(as of writing this\) using a "slimmed down version of FMA", but for common purposes perhaps this should still be sufficient.
+
+
+
+
 
 ## References
 
