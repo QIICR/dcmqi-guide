@@ -1,12 +1,6 @@
 # Quick Start
 
-To start using `dcmqi`, you can download the binary package with the command line converters for your operatings system following the links below for the latest \(v1.0.9\) release:
-
-* [`dcmqi` **Windows package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.2.1-win64-20190502-c3b40ac.zip)
-* [`dcmqi` **Linux package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.2.1-linux-20190502-c3b40ac.tar.gz)
-* [`dcmqi` **macOS package**](https://github.com/QIICR/dcmqi/releases/download/latest/dcmqi-1.2.1-mac-20190502-c3b40ac.tar.gz)
-
-You can also find the packages corresponding to the latest version of the source code [here](https://github.com/QIICR/dcmqi/releases/tag/latest).
+To start using `dcmqi`, you can download the binary package with the command line converters for Windows, Linux and macOS from this page (both the latest release and pre-release corresponding to the current version of the source code): https://github.com/QIICR/dcmqi/releases.
 
 If you prefer using Docker, download the [`dcmqi` **image from DockerHub**](https://hub.docker.com/r/qiicr/dcmqi/) with `docker pull qiicr/dcmqi`.
 
